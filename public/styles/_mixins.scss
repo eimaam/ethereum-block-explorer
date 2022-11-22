@@ -40,7 +40,7 @@
 }
 
 // width for all first divs of containers - Desktop 
-@mixin desk-width($width: 70%){
+@mixin desk-width($width: 55%){
     width: $width;
     margin: auto;
 }

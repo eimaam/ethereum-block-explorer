@@ -3,6 +3,10 @@
 @import './mixins';
 @import './header';
 @import './footer';
+@import './topNav';
+@import './sideNav';
+@import './Container';
+@import './assetItem';
 
 // reset all to 0
 *{
@@ -21,6 +25,7 @@ html, body{
     text-align: justify;
     background-color: $bgColor;
     font-family: $spaceGrotesk;
+    color: $dark;
     // overflow: hidden;
 
     ::-webkit-scrollbar{
@@ -59,13 +64,14 @@ textarea{
     width: 90%;
     font-family: inherit;
     font-size: 1rem;
-    padding: 0.8rem 0.5rem;
+    padding: 0.5rem;
     border: 1px solid $primary;
     border-radius: $s-border-radius;
-    color: $dark;
+    color: $default;
     background-color: $bgColor;
     caret-color: $extras;
     resize: none;
+    font-weight: lighter;
     
     &:hover{
         border: 1px solid $primary;

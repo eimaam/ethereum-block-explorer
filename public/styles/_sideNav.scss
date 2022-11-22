@@ -1,0 +1,25 @@
+.side--nav{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 15%;
+    background-color: $primary;
+    box-shadow: 0 5px 5px 0 rgba(197, 187, 187, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
+    height: 100vh;
+    @include flex-col;
+    align-items: flex-start;
+
+    ul{
+        @include flex-col;
+        align-items: flex-start;
+        padding-top: $l-pad;
+
+        li, a{
+            font-size: 1.2rem;
+            padding: $xs-pad;
+            @include flex-row;
+            gap: 0.8rem;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.assetItem{
+    width: 100%;
+    @include grid(4, 1fr);
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-block: $xs-pad;
+    
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        h4{
+            color: $primary;
+        }
+    }
+
+    .asset--info{
+
+        .flex-row{
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        // p{
+        //     color: $primary;
+        // }
+
+        
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .sender{
+        p{
+            width: 70%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

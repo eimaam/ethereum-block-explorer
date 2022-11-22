@@ -25,7 +25,6 @@ a{
 
 h1{
     font-size: 2rem;
-    color: $secondary;
 
     @include mobile{
         font-size: 1.35rem;
@@ -80,8 +79,8 @@ i{
 
 // Button & submit input
 button, input[type=submit]{
-    padding: $xs-pad $m-pad; 
-    font-size: 1rem;
+    padding: $xs-pad; 
+    font-size: 0.8rem;
     color: $default;
     text-transform: capitalize;
     background-color: $primary;
@@ -163,7 +162,8 @@ hr{
 }
 // container default
 .container{
-    width: 100%;
+    width: 85%;
+    float: right;
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -173,11 +173,10 @@ hr{
         padding-block: 1.5rem;
     }
     
-    .container--item{
-        @include flex-col;
+    .container--child{
         margin: auto;
         @include desk-width;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         
         @include mobile{
             @include mobile-width;

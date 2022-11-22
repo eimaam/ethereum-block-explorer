@@ -1,14 +1,27 @@
 import React from 'react'
+import { AssetsItem } from './AssetsItem'
 
-export const Assets = () => {
+export const AllAssets = () => {
   return (
     <div id='assets'>
-        <div>
-          <h3>Token</h3>
-        </div>
-        <div>
-
-        </div>
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
+        <AssetsItem />
     </div>
   )
 }

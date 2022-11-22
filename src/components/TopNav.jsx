@@ -1,21 +1,23 @@
 import React from 'react'
 import { FaEthereum } from 'react-icons/fa'
-import ethLogo from "../assets/EthereumLogo.png"
+import ethLogo from "../assets/EthereumLogo.svg"
 
 export const TopNav = () => {
   return (
-    <div>
-        <div>
-            <img src={ethLogo} alt="" />
-            <h2>&lt; ETH-SCAN /&gt;</h2>
-        </div>
-        <div>
-            <div>
-                <input type="text" placeholder='enter ETH address'/>
-                <button type='submit'>SEARCH</button>
+    <div className='top--nav' id='topNav'>
+        <div className='nav--item'>
+            <div className='flex-row'>
+                <img src={ethLogo} alt="" />
+                <h3>&lt; ETH-SCAN /&gt;</h3>
             </div>
-            <div>
-                <button>CONNECT WALLET <FaEthereum /></button>
+            <div className='flex-row'>
+                <div className='flex-row'>
+                    <input type="text" placeholder='enter ETH address'/>
+                    <button type='submit'>SEARCH</button>
+                </div>
+                <div>
+                    <button className='flex-row' style={{gap: "0.2rem"}}><FaEthereum /> CONNECT WALLET </button>
+                </div>
             </div>
         </div>
     </div>

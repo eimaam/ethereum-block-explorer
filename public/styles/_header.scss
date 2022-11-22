@@ -1,39 +1,25 @@
-header{
-    background-image: url('/background.png'), url('/background2.png');
-    background-position: right bottom, left top;
-    background-repeat: no-repeat;
-    background-color: $primary;
-    margin: auto;
+.header{
+    @include flex-row;
     width: 100%;
-    min-height: 60vh;
-    @include flex-col;
-    gap: 0.5rem;
-    margin-top: 3.5rem;
-    margin-bottom: $m-margin;
-    padding: $m-pad;
+    margin-block: 1rem;
+    background-color: $primary;
+    border-radius: $m-border-radius;
 
-    *{
-        color: $default;
-        text-align: center;
-    }
-
-    @include mobile{
-        margin-top: 3.45rem;
-        background-position: left bottom, right top;
-        background-size: cover;
-    }
-
-    .categories{
+    .main{
         @include flex-row;
-        padding: $s-pad;
-        flex-wrap: wrap;
 
-        @include mobile{
-            @include grid(3, 1fr);
-            align-items: center;
-            flex-wrap: nowrap;
-            justify-content: center;
-            margin: auto;
+        img{
+            width: 200px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .address{
+            width: 60%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
         }
     }
 }

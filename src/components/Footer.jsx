@@ -1,31 +1,32 @@
 import React from 'react'
-import ethLogo from "../assets/EthereumLogo.png"
+import ethLogo from "../assets/EthereumLogo.svg"
 import { FaLinkedinIn, FaTwitter, FaFacebook } from "react-icons/fa"
 
 export const Footer = () => {
   return (
-    <div id='footer'>
-        <div>
-            <div>
+    <footer id='footer'>
+        <div className='footer--item'>
+            <div className='title'>
                 <div>
                     <img src={ethLogo} alt="ethereum logo" />
+                    <h1>&lt; ETH-SCAN /&gt;</h1>
                 </div>
-                <div>
+                <div className="flex-col">
                     <h2>
-                        Partner with us:
+                        Reach Us via:
                     </h2>
-                    <div>
-                        <h3><FaTwitter /></h3>
-                        <h3><FaTwitter /></h3>
-                        <h3><FaTwitter /></h3>
+                    <div className='flex-row' style={{gap: "1rem"}}>
+                        <h1><FaLinkedinIn /></h1>
+                        <h1><FaTwitter /></h1>
+                        <h1><FaFacebook /></h1>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='foot--note'>
                 <p>All rights reserved &copy; 2022</p>
                 <p>Priori Capital Assessment</p>
             </div>
         </div>
-    </div>
+    </footer>
   )
 }
