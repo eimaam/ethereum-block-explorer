@@ -199,7 +199,7 @@ hr {
   }
 }
 
-.header {
+.header, .top--wallets {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
@@ -210,23 +210,23 @@ hr {
   background-color: #FF9270;
   border-radius: 0.5rem;
 }
-.header * {
+.header *, .top--wallets * {
   color: #212121;
 }
-.header .main {
+.header .main, .top--wallets .main {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
 }
-.header .main img {
+.header .main img, .top--wallets .main img {
   width: 200px;
   height: 200px;
   margin: 0;
   padding: 0;
 }
-.header .main .address {
+.header .main .address, .top--wallets .main .address {
   width: 60%;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -374,6 +374,45 @@ footer .footer--item .title img {
   width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.loader {
+  width: 100% !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8dcca;
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10000000;
+}
+
+.top--wallets {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+}
+.top--wallets .balance--card {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8dcca;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.top--wallets .balance--card img {
+  width: 40px;
+  height: 40px;
 }
 
 * {

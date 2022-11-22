@@ -3,10 +3,10 @@ import { DotLoader } from 'react-spinners'
 
 export const LoaderFullscreen = () => {
   return (
-    <div className='container'>
-        <div className='container--child'>
-            <DotLoader />
-        </div>
+    <div className='loader'>
+      <div>
+        <DotLoader />
+      </div>
     </div>
   )
 }

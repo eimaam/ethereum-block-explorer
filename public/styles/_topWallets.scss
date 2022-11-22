@@ -1,0 +1,21 @@
+.top--wallets{
+    @extend .header;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: $m-pad;
+
+
+    .balance--card{
+        width: max-content;
+        @include flex-row;
+        background-color: $secondary;
+        padding: $xs-pad $s-pad;
+        border-radius: $m-border-radius;
+
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+}

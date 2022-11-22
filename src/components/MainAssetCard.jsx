@@ -3,8 +3,15 @@ import ethLogo from "../assets/EthereumLogo.svg"
 import { BiHide, BiShare, BiShareAlt, BiShow } from "react-icons/bi"
 import axios from 'axios'
 import { LoaderFullscreen } from "./LoaderFullscreen"
+import { useData } from '../context/DataContext'
 
 export const MainAssetCard = () => {
+  const { etherBalance, loading } = useData()
+
+  if(loading){
+    return <LoaderFullscreen />
+  }
+
 
   return (
     <div className='header' id='mainAssetCard' >
@@ -16,8 +23,8 @@ export const MainAssetCard = () => {
             <div className='flex-col' style={{alignItems: "flex-start"}}>
               <h3>ETHEREUM</h3>
               <h2 className='address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
-              <h1>$41,600.089</h1>
-              {/* <h2>≈ {etherData.balance} ETH</h2> */}
+              <h1>{`$ ${etherBalance.quote}`}</h1>
+              <h2>≈ {etherBalance.balance} ETH</h2>
             </div>
             {/* <div>
               21/11/2022
