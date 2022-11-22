@@ -1,0 +1,59 @@
+@mixin flex-row($justify: center){
+    display: flex;
+    flex-direction: row;
+    gap: $m-pad;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin flex-col(){
+    display: flex;
+    flex-direction: column;
+    gap: $m-pad;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid($number, $sizes){
+    display: grid;
+    grid-template-columns: repeat($number, $sizes);
+    gap: 0.5rem;
+}
+
+@mixin mobile(){
+    @media only screen and (max-width: 800px) {
+        @content;
+    }
+}
+
+@mixin tablet(){
+    @media only screen and (min-width: 800px) and (max-width: 1400px){
+        @content;
+    }
+}
+
+// custom screen sizes
+@mixin custom-screen($screenSize){
+    @media only screen and (max-width: $screenSize) {
+        @content;
+    }
+}
+
+// width for all first divs of containers - Desktop 
+@mixin desk-width($width: 70%){
+    width: $width;
+    margin: auto;
+}
+
+@mixin tablet-width(){
+    width: 80%;
+    margin: auto;
+}
+
+// width for all first divs of containers - Mobile 
+@mixin mobile-width(){
+    width: 100%;
+    margin: auto;
+}
+
+

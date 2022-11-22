@@ -1,0 +1,43 @@
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $primary;
+    padding: $xs-pad;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    z-index: 999999;
+
+    ul{
+        width: 70%;
+        @include flex-row;
+        margin: auto;
+        justify-content: space-around;
+
+        @include mobile{
+            @include mobile-width;
+        }
+
+
+        li{
+            font-size: 1.3rem;
+            color: $default;
+
+            &:first-child{
+                margin-right: auto;
+            }
+
+            &:last-child{
+                background-color: $secondary;
+                border-radius: $m-border-radius;
+                padding: $xs-pad;
+            }
+
+            @include mobile{
+                font-size: 1rem;
+            }
+        }
+    }
+
+}

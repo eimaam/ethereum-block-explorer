@@ -1,0 +1,44 @@
+footer{
+    background-color: $primary;
+    padding-top: $l-pad;
+    margin-top: 5rem;
+
+    *{
+        color: $default;
+    }
+
+    .footer--items{
+        @include desk-width;
+        @include flex-row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        @include mobile{
+            @include mobile-width;
+            padding: $s-pad;
+        }
+
+        ul{
+            li{
+                line-height: 1.6;
+                
+                &:first-child{
+                    font-size: 1.2rem;
+                    text-decoration: underline;
+                }
+
+                @include mobile{
+                    &:first-child{
+                        font-size: 0.9rem;
+                    }
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    p{
+        text-align: center;
+    }
+}
