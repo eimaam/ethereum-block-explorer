@@ -5,6 +5,10 @@
     background-color: $primary;
     border-radius: $m-border-radius;
 
+    *{
+        color: $dark;
+    }
+
     .main{
         @include flex-row;
 

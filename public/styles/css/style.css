@@ -210,6 +210,9 @@ hr {
   background-color: #FF9270;
   border-radius: 0.5rem;
 }
+.header * {
+  color: #212121;
+}
 .header .main {
   display: flex;
   flex-direction: row;
