@@ -1,0 +1,13 @@
+.loader{
+    width: 100% !important;
+    height: 100vh;
+    @include flex-col;
+    background-color: $secondary;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000000;
+
+    
+}
