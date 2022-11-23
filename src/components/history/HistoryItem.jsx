@@ -7,9 +7,6 @@ import { LoaderFullscreen } from '../LoaderFullscreen'
 
 export const HistoryItem = ({from, value, time, date}) => {
     
- 
-
-
   return (
         <div className='history--item'>
             <div>

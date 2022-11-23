@@ -13,6 +13,7 @@
     // mobile styling
     @include mobile{
         width: 50%;
+        display: none;
     }
 
     ul{

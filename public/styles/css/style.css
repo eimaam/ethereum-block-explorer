@@ -364,8 +364,58 @@ footer .footer--item .title img {
     float: none;
   }
 }
-#topNav h3 {
+#topNav #mNav {
+  display: none;
+}
+@media only screen and (max-width: 820px) {
+  #topNav #mNav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background-color: #FF9270;
+    box-shadow: 0 5px 5px 0 rgba(249, 249, 249, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#topNav #mNav li, #topNav #mNav a {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+#topNav #navToggler {
+  display: none;
+  padding-inline: 0.5rem;
+}
+#topNav #navToggler h2 {
   color: #fff;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  z-index: 999999;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 820px) {
+  #topNav #navToggler {
+    display: block;
+  }
+}
+#topNav h3, #topNav h2 {
+  color: #fff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 #topNav .nav--item {
   width: 55%;
@@ -463,6 +513,7 @@ footer .footer--item .title img {
 @media only screen and (max-width: 820px) {
   .side--nav {
     width: 50%;
+    display: none;
   }
 }
 .side--nav ul {
@@ -632,7 +683,6 @@ textarea {
   padding: 0.5rem;
   border: 1px solid #FF9270;
   border-radius: 0.3rem;
-  color: #fff;
   background-color: rgb(240, 239, 239);
   caret-color: #788fdb;
   resize: none;

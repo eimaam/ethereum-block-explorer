@@ -12,8 +12,6 @@ export const TransactionHistory = () => {
     return <LoaderFullscreen />
   }
 
-  console.log(count)
-  
   return (
     <div className='transaction--history' id='assets'>
         {transHistory.slice(0, count).map((item, index) => {

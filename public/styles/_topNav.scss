@@ -9,8 +9,50 @@
         float: none;
     }
 
-    h3{
+    #mNav{
+        display: none;
+        
+        @include mobile{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            width: 100%;
+            background-color: $primary;
+            box-shadow: 0 5px 5px 0 rgba(249, 249, 249, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
+            min-height: 100vh;
+            @include flex-col;
+        }
+
+        li, a{
+            font-size: 1.2rem;
+            padding: $xs-pad;
+            @include flex-row;
+            gap: 0.8rem;
+        }
+    }
+
+    #navToggler{
+        display: none;
+        padding-inline: $xs-pad;
+
+        h2{
+            color: $default;
+            position: absolute;
+            top: 6px;
+            left: 5px;
+            z-index: 999999;
+            font-size: 1.5rem;
+        }
+
+        @include mobile{
+            display: block;
+        }
+    }
+
+    h3, h2{
         color: $default;
+        width: max-content;
     }
     
     .nav--item{

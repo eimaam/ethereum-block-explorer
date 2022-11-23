@@ -22,9 +22,9 @@ function App() {
 
   return (
     <>
+      <DataProvider>
       <TopNav />
       <SideNav />
-      <DataProvider>
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

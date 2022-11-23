@@ -1,13 +1,16 @@
 import React from 'react'
 import { BiHome } from 'react-icons/bi'
-import { FaSearchDollar } from 'react-icons/fa'
+import { FaBars, FaSearchDollar } from 'react-icons/fa'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { IoMdImages } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { useData } from '../context/DataContext'
 
 export const SideNav = () => {
+
+    
   return (
-    <div className='side--nav'>
+    <div className='side--nav' id='nav'>
         <ul>
             <li>
                 <Link to="/">
