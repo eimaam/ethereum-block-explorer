@@ -51,8 +51,8 @@ export const MainAssetCard = () => {
             <div className='flex-col' style={{alignItems: "flex-start"}}>
               <h3>ETHEREUM</h3>
               <h2 className='address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
-              <h1>{!hideBalance ? `$ ${etherBalance.quote}` : "*****"}</h1>
-              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "*****"} <span>ETH</span></h2>
+              <h1>{!hideBalance ? `$ ${etherBalance.quote}` : "******"}</h1>
+              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "******"} <span>ETH</span></h2>
             </div>
           </div>
         </div>
