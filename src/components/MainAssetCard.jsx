@@ -9,7 +9,7 @@ export const MainAssetCard = () => {
   // importing searched address from DataContext
   const { walletAddress } = useData()
   // import ethereum data from DataContext
-  const { etherBalance } = useData()
+  const { etherData } = useData()
 
   // state to manage balance state ==> show/hide
   const [hideBalance, setHideBalance] = useState(false)
@@ -37,29 +37,30 @@ export const MainAssetCard = () => {
   // error handler
   // displays loading animation if data is being fetched
   // to avoid page break
-  if(etherBalance === undefined){
+  if(etherData === undefined){
     return <LoaderFullscreen />
   }
 
+  // formatting the balance to main value in two decimal places using the contract decimals value
+  const etherBalance = (etherData.balance / Math.pow(10, etherData.contract_decimals)).toFixed(2)
+  
   return (
-    <div className='header' id='mainAssetCard' >
-        <div className='main'>
-          <div className='img--container'>
-            <img src={ethLogo} alt="ethereum logo svg" />
+    <div className='sm:px-6 sm:justify-between bg-primary p-4 rounded-lg flex justify-around' id='mainAssetCard' >
+        <div className='flex--row'>
+          <div className='m-0 p-0'>
+            <img className='w-28 h-auto sm:w-16 sm:h-auto' src={ethLogo} alt="ethereum logo svg" />
           </div>
-          <div>
-            <div className='flex-col' style={{alignItems: "flex-start"}}>
-              <h3>ETHEREUM</h3>
-              <h2 className='address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
-              <h1>{!hideBalance ? `$ ${etherBalance.quote}` : "******"}</h1>
-              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "******"} <span>ETH</span></h2>
-            </div>
+          <div className='flex--col' style={{alignItems: "flex-start"}}>
+            <h3>ETHEREUM</h3>
+            <h2 className='text-white w-200px sm:w-100px overflow-hidden text-ellipsis address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
+            <h1 className='text-extras'>{!hideBalance ? `$ ${etherData.quote}` : "******"}</h1>
+            <h2 className='text-white '>{!hideBalance ? `≈ ${etherBalance}` : "******"} <span>ETH</span></h2>
           </div>
         </div>
-        <div className='tools flex-row'>
-            {hideBalance && <h1 onClick={toggleBalance}><BiHide /></h1>}
-            {!hideBalance && <h1 onClick={toggleBalance}><BiShow /></h1>}
-            <h1 onClick={share}><BiShareAlt /></h1>
+        <div className='flex--row'>
+            {hideBalance && <h1 className="text-4xl sm:text-2xl" onClick={toggleBalance}><BiHide /></h1>}
+            {!hideBalance && <h1 className="text-4xl sm:text-2xl" onClick={toggleBalance}><BiShow /></h1>}
+            <h1 className="text-4xl sm:text-2xl" onClick={share}><BiShareAlt /></h1>
         </div>
     </div>
   )
