@@ -6,12 +6,24 @@ import { LoaderFullscreen } from "./LoaderFullscreen"
 import { useData } from '../context/DataContext'
 
 export const MainAssetCard = () => {
-  const { etherBalance, loading } = useData()
+  // import ethereum data from DataContext
+  const { etherBalance } = useData()
 
+  // state to manage balance state ==> show/hide
+  const [hideBalance, setHideBalance] = useState(false)
+
+  // function to change the state value and toggle balance
+  const toggleBalance = () => {
+    setHideBalance(prev => !prev)
+  }
+
+
+  // error handler
+  // displays loading animation if data is being fetched
+  // to avoid page break
   if(etherBalance === undefined){
     return <LoaderFullscreen />
   }
-
 
   return (
     <div className='header' id='mainAssetCard' >
@@ -23,17 +35,14 @@ export const MainAssetCard = () => {
             <div className='flex-col' style={{alignItems: "flex-start"}}>
               <h3>ETHEREUM</h3>
               <h2 className='address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
-              <h1>{`$ ${etherBalance.quote}`}</h1>
-              <h2>≈ {etherBalance.balance} ETH</h2>
+              <h1>{!hideBalance ? `$ ${etherBalance.quote}` : "*****"}</h1>
+              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "*****"} ETH</h2>
             </div>
-            {/* <div>
-              21/11/2022
-            </div> */}
           </div>
         </div>
         <div className='flex-row'>
-            <h1><BiHide /></h1>
-            <h1><BiShow /></h1>
+            {hideBalance && <h1 onClick={toggleBalance}><BiHide /></h1>}
+            {!hideBalance && <h1 onClick={toggleBalance}><BiShow /></h1>}
             <h1><BiShareAlt /></h1>
         </div>
     </div>
