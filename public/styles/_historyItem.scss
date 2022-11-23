@@ -2,17 +2,29 @@
     width: 100%;
     border-bottom: 1px solid $grey;
     @include grid(3,1fr);
-    
-    .with--address{
-        // overflow: hidden;
+    padding-block: $xs-pad;
 
-        
-
-        // p{
-        //     max-width: 60%;
-        //     white-space: nowrap;
-        //     overflow: hidden;
-        //     text-overflow: ellipsis;
-        // }
+    p{
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
+    @include mobile{
+        @include flex-row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0rem;
+
+        p{
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .flex-row{
+        margin-left: -0.5rem;
+        }
+    }
+    
 }
