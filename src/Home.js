@@ -8,13 +8,12 @@ import { TopWallets } from './components/TopWallets'
 
 export const Home = () => {
   return (
-    <div>
-      <Container>
-        {/* <MainAssetCard /> */}
-        {/* <TopWallets /> */}
-        <TransactionHistory />
-      </Container>
-      
+    <div className='container'>
+      <div className='container--child'>
+        <MainAssetCard />
+        <TopWallets />
+        <TransactionHistory />      
+      </div>
     </div>
   )
 }

@@ -6,6 +6,9 @@ import { Home } from './Home';
 import { Footer } from "./components/Footer"
 import { DataProvider } from './context/DataContext';
 import { LoaderFullscreen } from './components/LoaderFullscreen';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   // const [loading, setLoading] = useState(true)
   // useEffect(() => {
@@ -21,12 +24,13 @@ function App() {
     <>
       <TopNav />
       <SideNav />
-    <DataProvider>
-    <Routes>
-      <Route path='/' element={<Home />} />
-    </Routes>
-    </DataProvider>
+      <DataProvider>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+      </DataProvider>
     <Footer />
+    <ToastContainer autoClose={3000}/>
     </>
   );
 }

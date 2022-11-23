@@ -5,10 +5,15 @@
     top: 0;
     width: 15%;
     background-color: $primary;
-    box-shadow: 0 5px 5px 0 rgba(197, 187, 187, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
+    box-shadow: 0 5px 5px 0 rgba(249, 249, 249, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
     height: 100vh;
     @include flex-col;
     align-items: flex-start;
+
+    // mobile styling
+    @include mobile{
+        display: none;
+    }
 
     ul{
         @include flex-col;

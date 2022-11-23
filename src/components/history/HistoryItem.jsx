@@ -20,7 +20,7 @@ export const HistoryItem = ({from, value, time, date}) => {
                 <h2><RiMoneyDollarCircleFill /></h2>
                 <div>
                     <h4>Value:</h4>
-                    <b>{value}</b>
+                    <p>{value.toFixed(3)}</p>
                 </div>
             </div>
             <div className='with--address flex-row'>

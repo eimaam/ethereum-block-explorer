@@ -170,6 +170,8 @@ hr{
     margin: auto;
 
     @include mobile{
+        @include mobile-width;
+        float: none;
         padding-block: 1.5rem;
     }
     
@@ -177,9 +179,11 @@ hr{
         margin: auto;
         @include desk-width;
         // flex-wrap: wrap;
+        padding: $s-pad;
         
         @include mobile{
             @include mobile-width;
+            margin: 0rem;
         }
 
         @include tablet{

@@ -61,8 +61,7 @@ export const DataProvider = ({ children }) => {
           fetchBalance()
     }, [])
 
-    console.log(loading)
-    console.log(transHistory)
+    console.log(walletBalance)
 
   const value = {
     walletBalance,

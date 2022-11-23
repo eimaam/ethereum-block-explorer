@@ -9,6 +9,7 @@
 @import './historyItem';
 @import './loader';
 @import './topWallets';
+@import './transactionHistory';
 
 // reset all to 0
 *{
@@ -17,6 +18,12 @@
     box-sizing: border-box;
     border: none;
     transition: all 300ms
+}
+
+// react toastify
+.Toastify__toast {
+    border-radius: $l-pad;
+    background-color: $secondary;
 }
 
 html, body{

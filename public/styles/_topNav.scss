@@ -2,6 +2,16 @@
     width: 85%;
     float: right;
     background-color: $primary;
+
+    // mobile styling
+    @include mobile{
+        @include mobile-width;
+        float: none;
+    }
+
+    h3{
+        color: $default;
+    }
     
     .nav--item{
         @include desk-width;
@@ -10,6 +20,17 @@
         background-color: $primary;
         padding: 0.2rem $xs-pad;
         border-bottom: 1px solid $grey;
+
+         // mobile styling
+        @include mobile{
+            @include mobile-width;
+            float: none;
+        }
+
+        #search{
+            color: $secondary;
+            @include flex-row;
+        }
 
         button{
             background-color: $secondary;
@@ -20,15 +41,33 @@
                 background-color: $grey;
                 color: $default;
             }
+
+            @include mobile{
+                &:nth-child(2){
+                    display: none;
+                }
+                &:nth-child(1){
+                    font-size: 0.7rem;
+                }
+            }
         }
         
         input{
             width: 400px;
+
+            @include mobile{
+                width: 200px;
+                display: none;
+            }
         }
         
         img{
             width: 50px;
             height: 50px;
+
+            @include mobile{
+                display: none;
+            }
         }
     }
 }
