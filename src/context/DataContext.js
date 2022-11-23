@@ -22,22 +22,6 @@ export const DataProvider = ({ children }) => {
     const [transHistory, setTransHistory] = useState([])
 
     let etherBalance = walletBalance.find(item => item.contract_name === "Ether") 
-
-    // const fetchData = (url, setRes) => {
-    //     axios.get(url)
-    //     .then((res) => {
-    //       setRes(res.data.data.items)
-    //     })
-    //     .catch(err => console.log(err))
-    //     setLoading(false)
-    //   }
-
-    //   fetch balance and transactions
-    //   const fetchAllData = () => {
-    //     setLoading(true)
-    //       fetchData(balanceUrl, setWalletBalance)
-    //       fetchData(transactionsUrl, setTransHistory)
-    //   }
     
     useEffect(() => {
         const fetchBalance = () => {
