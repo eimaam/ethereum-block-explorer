@@ -344,34 +344,18 @@ footer .footer--item .title img {
 
 .assetItem {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
   border-top: 1px solid rgb(57, 56, 56);
   border-bottom: 1px solid rgb(57, 56, 56);
-  align-items: flex-start;
-  gap: 2rem;
-  padding-block: 0.5rem;
 }
-.assetItem div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+.assetItem .with--address {
+  overflow: hidden;
 }
-.assetItem div h4 {
-  color: #FF9270;
-}
-.assetItem .asset--info .flex-row, .assetItem .asset--info .icon--text {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.assetItem .asset--info img {
-  width: 50px;
-  height: 50px;
-}
-.assetItem .sender p {
+.assetItem .with--address h4 {
   width: 70%;
+  max-width: 70%;
+}
+.assetItem .with--address p {
+  max-width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
 }

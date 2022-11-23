@@ -7,15 +7,15 @@ import { Footer } from "./components/Footer"
 import { DataProvider } from './context/DataContext';
 import { LoaderFullscreen } from './components/LoaderFullscreen';
 function App() {
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 2500);
-  }, [])
-  if(loading){
-    return <LoaderFullscreen />
-  }
+  // const [loading, setLoading] = useState(true)
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 2500);
+  // }, [])
+  // if(loading){
+  //   return <LoaderFullscreen />
+  // }
 
   return (
     <>

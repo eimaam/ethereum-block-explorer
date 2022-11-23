@@ -1,5 +1,5 @@
 import React from 'react'
-import { AllAssets } from './components/AllAssets'
+import { AllAssets, TransactionHistory } from './components/TransactionHistory'
 import { MainAssetCard } from './components/MainAssetCard'
 import { Container } from './components/Container'
 import { SideNav } from './components/SideNav'
@@ -11,8 +11,8 @@ export const Home = () => {
     <div>
       <Container>
         {/* <MainAssetCard /> */}
-        <TopWallets />
-        <AllAssets />
+        {/* <TopWallets /> */}
+        <TransactionHistory />
       </Container>
       
     </div>

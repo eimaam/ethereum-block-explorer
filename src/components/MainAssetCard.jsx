@@ -8,7 +8,7 @@ import { useData } from '../context/DataContext'
 export const MainAssetCard = () => {
   const { etherBalance, loading } = useData()
 
-  if(loading){
+  if(etherBalance === undefined){
     return <LoaderFullscreen />
   }
 

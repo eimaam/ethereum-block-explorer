@@ -14,7 +14,7 @@ export const TopWallets = () => {
     <div className='top--wallets'>
     {walletBalance.slice(0,7).map((item, index) => {
                 return (
-                    <div className='balance--card'>
+                    <div key={index} className='balance--card'>
                         <img src={item.logo_url} alt="" />
                         <div>
                             <h4>{item.contract_ticker_symbol}</h4>

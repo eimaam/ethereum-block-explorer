@@ -1,0 +1,21 @@
+.history--item{
+    width: 100%;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    
+    .with--address{
+        overflow: hidden;
+
+        h4{
+            width: 70%;
+            max-width: 70%;
+
+        }
+
+        p{
+            max-width: 70%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
