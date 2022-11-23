@@ -1,0 +1,18 @@
+.history--item{
+    width: 100%;
+    border-bottom: 1px solid $grey;
+    @include grid(3,1fr);
+    
+    .with--address{
+        // overflow: hidden;
+
+        
+
+        // p{
+        //     max-width: 60%;
+        //     white-space: nowrap;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
+        // }
+    }
+}

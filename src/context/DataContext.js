@@ -52,15 +52,16 @@ export const DataProvider = ({ children }) => {
             axios.get(transactionsUrl)
             .then((res) => {
               setTransHistory(res.data.data.items)
-              setLoading(false)
+              transHistory !== undefined && setLoading(false)
             })
             .catch(err => console.log(err))
           }
-
+          
           fetchHistory()
           fetchBalance()
     }, [])
 
+    console.log(loading)
     console.log(transHistory)
 
   const value = {
@@ -70,6 +71,7 @@ export const DataProvider = ({ children }) => {
     transactionsUrl,
     loading, 
     setLoading,
+    transHistory,
   }
 
   return (

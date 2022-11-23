@@ -342,24 +342,13 @@ footer .footer--item .title img {
   gap: 0.8rem;
 }
 
-.assetItem {
+.history--item {
   width: 100%;
-  border-top: 1px solid rgb(57, 56, 56);
   border-bottom: 1px solid rgb(57, 56, 56);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
 }
-.assetItem .with--address {
-  overflow: hidden;
-}
-.assetItem .with--address h4 {
-  width: 70%;
-  max-width: 70%;
-}
-.assetItem .with--address p {
-  max-width: 70%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .loader {
   width: 100% !important;
   height: 100vh;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AllAssets, TransactionHistory } from './components/TransactionHistory'
+import { AllAssets, TransactionHistory } from './components/history/TransactionHistory'
 import { MainAssetCard } from './components/MainAssetCard'
 import { Container } from './components/Container'
 import { SideNav } from './components/SideNav'
