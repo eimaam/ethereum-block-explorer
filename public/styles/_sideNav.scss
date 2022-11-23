@@ -12,7 +12,7 @@
 
     // mobile styling
     @include mobile{
-        display: none;
+        width: 50%;
     }
 
     ul{

@@ -21,15 +21,27 @@
         padding: 0.2rem $xs-pad;
         border-bottom: 1px solid $grey;
 
+        @include tablet{
+            width: 100%;
+        }
+
          // mobile styling
         @include mobile{
             @include mobile-width;
             float: none;
         }
 
-        #search{
-            color: $secondary;
-            @include flex-row;
+        #searchIcon{
+            display: none;
+
+            @include mobile{
+                color: $secondary;
+                @include flex-row;
+            }
+        }
+
+        #cancelBtn{
+            display: none;
         }
 
         button{

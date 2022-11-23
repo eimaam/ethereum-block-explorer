@@ -5,24 +5,56 @@ footer{
     width: 85%;
     float: right;
     margin-top: $l-margin;
-    // box-shadow: 0 5px 5px 0 rgba(197, 187, 187, 0.2), 0 5px 5px 0 rgba(197, 187, 187, 0.2);
+
+    @include mobile{
+        width: 100%;
+    }
     
     .footer--item{
         @include desk-width;
         @include flex-col;
+
+        @include mobile{
+            @include mobile-width;
+        }
         
         .title{
             width: 100%;
             @include flex-row;
             justify-content: space-between;
 
+            @include mobile{
+                flex-direction: column;
+            }
+
          div:first-child{
             @include flex-row;
             gap: 0;
+
+            // tablet mode
+            @include tablet{
+                flex-direction: column;
+
+            }
+
+            // mobile styling
+            @include mobile{
+                flex-direction: column;
+            }
          }   
             img{
                 width: 200px;
                 height: 200px;
+
+                @include tablet{
+                    width: 100px;
+                    height: 100px;
+                }
+
+                @include mobile{
+                    width: 100px;
+                    height: 100px;
+                }
             }
         }
     }
