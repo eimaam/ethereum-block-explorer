@@ -4,23 +4,49 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
-    fontFamily: {
-      spaceGrotesk: ['"Space Mono", monospace']
+    screens: {
+      'sm': {'max': '820px'},
+      'md': {'max': '820px', 'max': '1410px'},
+      'lg': "1410px",
     },
-    width: {
-      '72': '28rem'
+    extend: {
+      fontSize: {
+        "text-base": "0.9rem"
+      },
+      colors: {
+        'default': '#fff',
+        'primary': '#61DB98',
+        // 'primary': '#FF9270',
+        'secondary': '#ebfff5',
+        // 'secondary': '#f8dcca',
+        'dark': '#212121',
+        'bgColor': 'rgb(240, 239, 239)',
+        'grey': 'rgb(57, 56, 56)',
+        "extras": "#788fdb"
+      },
+      width: {
+        "200px": "200px",
+        "100px": "100px",
+        '15': '15%',
+        '85': '85%',
+        '55': "55%",
+        '60': "60%",
+        '80': '80%'
+      },
+      height: {
+        '50vh': "50vh" 
+      }
+    },
+    fontFamily: {
+      "spaceGrotesk": ['"Space Grotesk", sans-serif']
     },
     borderRadius: {
       'none': '0',
       'sm': '0.125rem',
       default: '0.25rem',
       default: '4px',
-      'md': '0.375rem',
-      'lg': '20%',
-      'full': '9999px',
-      'large': '55%',
-      'half': '50%',
+      'md': '0.5rem',
+      'lg': '1rem',
     }
     
   },
