@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ethLogo from "../assets/EthereumLogo.svg"
-import { BiHide, BiShare, BiShareAlt, BiShow } from "react-icons/bi"
-import axios from 'axios'
+import { BiHide, BiShareAlt, BiShow } from "react-icons/bi"
 import { LoaderFullscreen } from "./LoaderFullscreen"
 import { useData } from '../context/DataContext'
+import { toast } from 'react-toastify'
 
 export const MainAssetCard = () => {
   // import ethereum data from DataContext
@@ -17,6 +17,20 @@ export const MainAssetCard = () => {
     setHideBalance(prev => !prev)
   }
 
+  //function to copy unique share URL
+  const share = () => {
+    // referencing the address location
+    let address = document.querySelector(".address");
+  
+    
+    // address.setSelectionRange(0, 99999); // For mobile devices
+  
+    // defining the string format to copy
+    navigator.clipboard.writeText(`ether-scan.vercel.app/${address.innerHTML}`);
+    
+    toast.success("Link Copied!");
+  }
+
 
   // error handler
   // displays loading animation if data is being fetched
@@ -28,7 +42,7 @@ export const MainAssetCard = () => {
   return (
     <div className='header' id='mainAssetCard' >
         <div className='main'>
-          <div className='img'>
+          <div className='img--container'>
             <img src={ethLogo} alt="ethereum logo svg" />
           </div>
           <div>
@@ -36,14 +50,14 @@ export const MainAssetCard = () => {
               <h3>ETHEREUM</h3>
               <h2 className='address'>0x165cd37b4c644c2921454429e7f9358d18a45e14</h2>
               <h1>{!hideBalance ? `$ ${etherBalance.quote}` : "*****"}</h1>
-              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "*****"} ETH</h2>
+              <h2>{!hideBalance ? `≈ ${etherBalance.balance}` : "*****"} <span>ETH</span></h2>
             </div>
           </div>
         </div>
-        <div className='flex-row'>
+        <div className='tools flex-row'>
             {hideBalance && <h1 onClick={toggleBalance}><BiHide /></h1>}
             {!hideBalance && <h1 onClick={toggleBalance}><BiShow /></h1>}
-            <h1><BiShareAlt /></h1>
+            <h1 onClick={share}><BiShareAlt /></h1>
         </div>
     </div>
   )
