@@ -6,6 +6,8 @@ import { useData } from '../context/DataContext'
 import { toast } from 'react-toastify'
 
 export const MainAssetCard = () => {
+  // importing searched address from DataContext
+  const { walletAddress } = useData()
   // import ethereum data from DataContext
   const { etherBalance } = useData()
 

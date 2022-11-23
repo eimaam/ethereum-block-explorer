@@ -8,10 +8,13 @@ import { GrClose } from 'react-icons/gr'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { IoMdImages } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const TopNav = () => {
-    const { walletAddress, setWalletAddress } = useData()
-    // manage mobile navigation menu display
+    // importing walletAddress value and state updater to update as address is entered in search bar 
+    const { setWalletAddress, walletAddress } = useData()
+
+    // manage mobile navigation menu display ==> hide/show
     const [showNav, setShowNav] = useState(false)
 
     // function to manage items display on mobile when search is enabled
@@ -39,20 +42,21 @@ export const TopNav = () => {
             walletConnect.style.display = "block"
         }
     }
+    
 
-    const [address, setAddress] = useState("")
+    // user's entered address
+    const [enteredAddress, setEnteredAddress] = useState("")
+    
 
     const handleChange = (e) => {
         e.preventDefault()
         // const {name, value} = e.target
-        setAddress(e.target.value)
-        console.log(address)
+        setEnteredAddress(e.target.value)
+        console.log(enteredAddress)
     }
 
     const fetchData = () => {
-        setWalletAddress(address)
-
-        alert(address)
+        setWalletAddress(enteredAddress)
     }
 
     
@@ -80,7 +84,7 @@ export const TopNav = () => {
                 <div className='flex-row'>
                     <input 
                     type="text" 
-                    placeholder='enter ETH address'
+                    placeholder={walletAddress !== "0x690b9a9e9aa1c9db991c7721a92d351db4fac990" ? walletAddress : `enter ETH address`}
                     name='walletAddress'
                     onChange={handleChange}
                     />
