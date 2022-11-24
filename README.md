@@ -1,11 +1,19 @@
-# Getting Started with Create React App
+## ETHEREUM NETWORK Block Explorer
+### For Priori Capital Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Navigation:
+#### Landing Page - Short details on the App with Nav Bar to direct to Dashboard and Search/Explore Page
+#### Explore Page - Enter Ethereum Address to Search and get all Balances and Transactions
+#### Dashboard - View and Manage all Balances and Transaction History of the linked Wallet/Address
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installation Procedure:
+- Clone or download this repo using the `<CODE>` button just below the repo title
+- Unzip the Folder and Open with VS Code or your preferred Editor
 
+
+In the project directory, you run:
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
