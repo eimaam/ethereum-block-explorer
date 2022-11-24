@@ -58,11 +58,13 @@ export const TopNav = () => {
     }
 
     const fetchData = () => { 
-        setLoading(true)
         // return error message if address field is empty
         if(enteredAddress === ""){
             return toast.error('pls enter an Address')
+        }else if(enteredAddress.includes(" ")){
+            return toast.error('Address can not contain space(s)')
         }
+        setLoading(true)
         setWalletAddress(enteredAddress)
     }
 
@@ -92,7 +94,7 @@ export const TopNav = () => {
                     <input 
                     className='w-96 sm:w-full sm:hidden'
                     type="text" 
-                    placeholder={walletAddress !== "0x690b9a9e9aa1c9db991c7721a92d351db4fac990" ? walletAddress : `Enter ETH address`}
+                    placeholder={walletAddress !== "" ? walletAddress : `Enter ETH address`}
                     name='walletAddress'
                     onChange={handleChange}
                     />
