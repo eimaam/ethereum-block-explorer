@@ -6,6 +6,11 @@
 #### Explore Page - Enter Ethereum Address to Search and get all Balances and Transactions
 #### Dashboard - View and Manage all Balances and Transaction History of the linked Wallet/Address
 
+### For Unique Share URL: 
+- Click on the Share Icon located at the right end of the Top Card in Dashboard page.'
+- Unique Share URL Format: priori.capital/WalletAddress
+
+
 
 ## Installation Procedure:
 - Clone or download this repo using the `<CODE>` button just below the repo title
