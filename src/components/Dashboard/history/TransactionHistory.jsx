@@ -23,16 +23,16 @@ export const TransactionHistory = () => {
     {transHistory.length !== 0 
     ? 
     <div className='my-4 shadow-lg rounded-md px-4 py-2' id='assets' >
-      <div className='flex--row items-start justify-around cursor-pointer gap-6'>
-        <div className='flex--row justify-start cursor-pointer gap-6 mr-auto'>
-            <img src={chart} className="w-14 h-auto" />
+      <div className='flex--row items-center justify-around cursor-pointer gap-6'>
+        <div className='flex--row justify-start cursor-pointer gap-6 mr-auto sm:gap-2'>
+            <img src={chart} className="w-14 h-auto sm:w-8" />
             <div>
-              <h1 className='text-extras'>History: </h1>
+              <h1 className='text-extras md:text-2xl'>History: </h1>
             </div>
         </div>
         {/* togglers for showing and hiding sections */}
-        {show && <h1 className="text-4xl sm:text-2xl mr-10" onClick={() => setShow(prevState => !prevState)}><BiShow /></h1>}
-        {!show && <h1 className="text-4xl sm:text-2xl mr-10" onClick={() => setShow(prevState => !prevState)}><BiHide /></h1>}
+        {show && <h1 className="text-4xl md:text-3xl sm:text-xl mr-10 sm:mr-5" onClick={() => setShow(prevState => !prevState)}><BiShow /></h1>}
+        {!show && <h1 className="text-4xl md:text-3xl sm:text-xl mr-10 sm:mr-5" onClick={() => setShow(prevState => !prevState)}><BiHide /></h1>}
       </div>
       {/* display based onlly if show === true */}
       {show &&

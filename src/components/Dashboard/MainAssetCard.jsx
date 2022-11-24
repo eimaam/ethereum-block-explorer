@@ -25,7 +25,7 @@ export const MainAssetCard = () => {
     let address = document.querySelector(".address");
     
     // defining the string format to copy
-    navigator.clipboard.writeText(`ether-scan.vercel.app/${address.innerHTML}`);
+    navigator.clipboard.writeText(`priori.capital/${address.innerHTML}`);
     toast.success("Link Copied!");
   }
 
@@ -54,9 +54,9 @@ export const MainAssetCard = () => {
           </div>
         </div>
         <div className='flex--row'>
-            {hideBalance && <h1 className="text-4xl sm:text-2xl" onClick={toggleBalance}><BiHide /></h1>}
-            {!hideBalance && <h1 className="text-4xl sm:text-2xl" onClick={toggleBalance}><BiShow /></h1>}
-            <h1 className="text-4xl sm:text-2xl" onClick={share}><BiShareAlt /></h1>
+            {hideBalance && <h1 className="text-4xl md:text-3xl sm:text-2xl" onClick={toggleBalance}><BiHide /></h1>}
+            {!hideBalance && <h1 className="text-4xl md:text-3xl sm:text-2xl" onClick={toggleBalance}><BiShow /></h1>}
+            <h1 className="text-4xl md:text-3xl sm:text-2xl" onClick={share}><BiShareAlt /></h1>
         </div>
     </div>
   )

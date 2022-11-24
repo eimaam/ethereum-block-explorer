@@ -16,10 +16,14 @@ function App() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
       AOS.init({delay: 600, duration: 700, easing: 'ease-out'})
+
+      // show loading animation for 2.5 secs
     setTimeout(() => {
       setLoading(false)
     }, 2500);
   }, [])
+
+
 
   if(loading){
     return <LoaderFullscreen />
