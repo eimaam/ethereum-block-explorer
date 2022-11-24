@@ -6,6 +6,8 @@
     body{
         @apply 
         font-spaceGrotesk
+        transition-all
+        duration-300
     }
     .share--icon{
         @apply
@@ -16,11 +18,12 @@
     }
 
     .container--child{
-        margin: auto;
-        width: 55%;
-        padding: 1rem;
-
         @apply
+        transition-all
+        duration-300
+        p-4
+        m-auto
+        w-55
         mt-16
         sm:min-w-full 
         md:w-80
