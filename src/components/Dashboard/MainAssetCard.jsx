@@ -41,7 +41,7 @@ export const MainAssetCard = () => {
   const etherBalance = (etherData.balance / Math.pow(10, etherData.contract_decimals)).toFixed(5)
   
   return (
-    <div className='sm:px-6 sm:justify-between bg-primary p-4 rounded-lg flex justify-around' id='mainAssetCard' >
+    <div className='sm:px-6 sm:justify-between bg-primary p-4 rounded-lg flex justify-around' data-aos="fade-down">
         <div className='flex--row'>
           <div className='m-0 p-0'>
             <img className='w-28 h-auto sm:w-16 sm:h-auto' src={ethLogo} alt="ethereum logo svg" />

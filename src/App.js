@@ -15,12 +15,12 @@ import { Explore } from './components/Explore';
 function App() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-      AOS.init({delay: 700, duration: 700, easing: 'ease-out'})
+      AOS.init({delay: 600, duration: 700, easing: 'ease-out'})
     setTimeout(() => {
       setLoading(false)
     }, 2500);
   }, [])
-  
+
   if(loading){
     return <LoaderFullscreen />
   }
