@@ -2,24 +2,41 @@ import React, { useState } from 'react'
 import { ClipLoader } from 'react-spinners'
 import { useData } from '../../../context/DataContext'
 import { HistoryItem } from './HistoryItem'
+// chart illustration image
+import chart from "../../../assets/chart1.webp"
+import { BiHide, BiShow } from 'react-icons/bi'
 
 export const TransactionHistory = () => {
   const { transHistory } = useData()
   const [count, setCount] = useState(15)
+  const [show, setShow] = useState(true)
 
   // if data is still being fetch, display loader
   if(transHistory === undefined){
     return <div className='flex--col'><ClipLoader /></div>
   }
 
-  console.log(transHistory.length)
 
   return (
     <>
     {/* condition to check if Address has a transaction or not and display different UI depending on the condition */}
     {transHistory.length !== 0 
     ? 
-    <div className='my-4 shadow-2xl rounded-md p-2' id='assets' >
+    <div className='my-4 shadow-lg rounded-md px-4 py-2' id='assets' >
+      <div className='flex--row items-start justify-around cursor-pointer gap-6'>
+        <div className='flex--row justify-start cursor-pointer gap-6 mr-auto'>
+            <img src={chart} className="w-14 h-auto" />
+            <div>
+              <h1 className='text-extras'>History: </h1>
+            </div>
+        </div>
+        {/* togglers for showing and hiding sections */}
+        {show && <h1 className="text-4xl sm:text-2xl mr-10" onClick={() => setShow(prevState => !prevState)}><BiShow /></h1>}
+        {!show && <h1 className="text-4xl sm:text-2xl mr-10" onClick={() => setShow(prevState => !prevState)}><BiHide /></h1>}
+      </div>
+      {/* display based onlly if show === true */}
+      {show &&
+      <>
         {transHistory.slice(0, count).map((item, index) => {
           return <HistoryItem 
                   key={index}
@@ -34,6 +51,8 @@ export const TransactionHistory = () => {
           {/* add count+count when clicked in order to increase slice value and display more transactions */}
           <button className='bg-primary m-3' onClick={() => setCount(prev => prev + prev)}>SHOW MORE</button>
         </div>
+        </>
+      }
     </div>
     :
     <div className='my-4 shadow-2xl rounded-md p-2 h-36 flex--col' id='assets'>

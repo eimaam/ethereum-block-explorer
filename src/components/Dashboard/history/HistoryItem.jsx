@@ -5,7 +5,7 @@ import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 export const HistoryItem = ({from, value, time, date}) => {
     
   return (
-        <div className='flex--row gap-20 border-b border-gray-300 w-full justify-start sm:gap-0 sm:flex sm:flex-wrap sm:justify-between'>
+        <div className='flex--row gap-20 mt-6 border-b border-gray-300 w-full justify-start sm:gap-0 sm:flex sm:flex-wrap sm:justify-between'>
             <div className='w-200px sm:w-max sm:flex-initial'>
                 <p>{time.slice(0,5)}</p>
                 <p>{date}</p>
