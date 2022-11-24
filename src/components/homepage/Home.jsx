@@ -24,16 +24,16 @@ export const Home = () => {
             </div>
         </div>
     </div>
-    <div className='w-full my-14 flex--col '>
-      <div className='w-60 grid grid-cols-2 gap-6 md:w-80 sm:flex sm:flex-col'>
-        <div className='flex--col items-start justify-start gap-6'>
-          <h1>Support for all ERC-20 Tokens</h1>
-          <h2 className='flex-row justify-start'><FaCheck /> Easy to use</h2>
-          <h2 className='flex-row justify-start'><FaCheck /> Safe</h2>
-          <h2 className='flex-row justify-start'><FaCheck /> Secure</h2>
-        </div>
+    <div className='w-full my-14 flex--col'>
+      <div className='w-60 grid grid-cols-2 gap-20  md:w-80 sm:flex sm:flex-col'>
         <div>
           <img src={tokens} alt="ethereum tokens" />
+        </div>
+        <div className='flex--col items-start justify-start gap-6 sm:items-center'>
+          <h1 className='sm:text-center'>Support for all ERC-20 Tokens</h1>
+          <h2 className='flex--row justify-start'><FaCheck /> Easy to use</h2>
+          <h2 className='flex--row justify-start'><FaCheck /> Safe</h2>
+          <h2 className='flex--row justify-start'><FaCheck /> Secure</h2>
         </div>
       </div>
     </div>
