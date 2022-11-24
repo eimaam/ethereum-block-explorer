@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useContext, createContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 const DataContext = createContext()
@@ -28,7 +27,6 @@ export const DataProvider = ({ children }) => {
     
     // runs everytime address is changed 
     useEffect(() => {
-      setLoading(true)
         const fetchBalance = () => {
           if(walletAddress.length < 10){
             return toast.error('Address not complete!')
@@ -47,7 +45,6 @@ export const DataProvider = ({ children }) => {
           }
 
         const fetchHistory = () => {
-          setLoading(true)
             axios.get(transactionsUrl)
             .then((res) => {
               setTransHistory(res.data.data.items)
@@ -58,9 +55,23 @@ export const DataProvider = ({ children }) => {
           fetchHistory()
           fetchBalance()
 
-          setLoading(false)
+          setTimeout(() => {
+            setLoading(false)
+          }, 2500);
 
-    }, [walletAddress, loading])
+    }, [walletAddress])
+
+    // function to set Address to be processed - address to be passed as argument 
+    const LookUpAddress = (enteredAddress) => { 
+      // return error message if address field is empty
+      if(enteredAddress === ""){
+          return toast.error('pls enter an Address')
+      }else if(enteredAddress.includes(" ")){
+          return toast.error('Address can not contain space(s)')
+      }
+      setLoading(true)
+      setWalletAddress(enteredAddress)
+  }
 
     // export values
   const value = {
@@ -72,7 +83,8 @@ export const DataProvider = ({ children }) => {
     setLoading,
     transHistory,
     walletAddress, 
-    setWalletAddress
+    setWalletAddress,
+    LookUpAddress
   }
 
   return (
