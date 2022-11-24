@@ -27,6 +27,7 @@ module.exports = {
       width: {
         "200px": "200px",
         "100px": "100px",
+        "600px": "600px",
         '15': '15%',
         '85': '85%',
         '55': "55%",
@@ -34,7 +35,7 @@ module.exports = {
         '80': '80%'
       },
       height: {
-        '50vh': "50vh" 
+        '70vh': "70vh" 
       }
     },
     fontFamily: {
