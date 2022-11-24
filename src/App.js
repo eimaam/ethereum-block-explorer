@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { SideNav } from './components/SideNav';
-import { TopNav } from './components/TopNav';
-import { Home } from './Home';
-import { Footer } from "./components/Footer"
+import { Dashboard } from './components/Dashboard/Dashboard';
 import { DataProvider } from './context/DataContext';
 import { LoaderFullscreen } from './components/LoaderFullscreen';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Home } from './components/homepage/Home';
+import { ErrorPage } from './components/ErrorPage';
 
 function App() {
   // const [loading, setLoading] = useState(true)
@@ -23,14 +22,14 @@ function App() {
   return (
     <>
       <DataProvider>
-      <TopNav />
-      <SideNav />
       <Routes>
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/' element={<Home />} />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
       </DataProvider>
-    <Footer />
-    <ToastContainer autoClose={3000}/>
+      {/* react toastify */}
+      <ToastContainer autoClose={3000}/>
     </>
   );
 }
