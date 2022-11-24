@@ -8,10 +8,11 @@ import { GrClose } from 'react-icons/gr'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { IoMdImages } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const TopNav = () => {
     // importing walletAddress value and state updater to update as address is entered in search bar 
-    const { setWalletAddress, walletAddress } = useData()
+    const { setWalletAddress, walletAddress, setLoading } = useData()
 
     // manage mobile navigation menu display ==> hide/show
     const [showNav, setShowNav] = useState(false)
@@ -56,7 +57,12 @@ export const TopNav = () => {
         console.log(enteredAddress)
     }
 
-    const fetchData = () => {
+    const fetchData = () => { 
+        setLoading(true)
+        // return error message if address field is empty
+        if(enteredAddress === ""){
+            return toast.error('pls enter an Address')
+        }
         setWalletAddress(enteredAddress)
     }
 
