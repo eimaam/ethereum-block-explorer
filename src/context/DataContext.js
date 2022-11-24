@@ -18,17 +18,20 @@ export const DataProvider = ({ children }) => {
     // const [transactionsUrl, setTransactionsUrl] = useState(`https://api.covalenthq.com/v1/1/address/${walletAddress}/transactions_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=${process.env.REACT_APP_API_KEY}`)
     
     
-    let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=${process.env.REACT_APP_API_KEY}` 
-    let transactionsUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/transactions_v2/?quote-currency=USD&format=JSON&nft=false&no-nft-fetch=false&key=${process.env.REACT_APP_API_KEY}` 
+    let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_API_KEY}` 
+    let transactionsUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/transactions_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_API_KEY}` 
 
     const [loading, setLoading] = useState(true)
     const [walletBalance, setWalletBalance] = useState([])
     const [transHistory, setTransHistory] = useState([])
 
-    let etherBalance = walletBalance.find(item => item.contract_name === "Ether") 
+    let etherData = walletBalance.find(item => item.contract_name === "Ether") 
     
     useEffect(() => {
         const fetchBalance = () => {
+          if(walletAddress.length < 10){
+            return toast.error('Address not complete!')
+          }
             axios.get(balanceUrl)
             .then((res) => {
               setWalletBalance(res.data.data.items)
@@ -50,9 +53,10 @@ export const DataProvider = ({ children }) => {
           fetchBalance()
     }, [walletAddress])
 
+
   const value = {
     walletBalance,
-    etherBalance,
+    etherData,
     balanceUrl,
     transactionsUrl,
     loading, 
