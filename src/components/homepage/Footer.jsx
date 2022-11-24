@@ -15,7 +15,7 @@ export const Footer = () => {
                     <h2>
                         Reach Us via:
                     </h2>
-                    <div className='flex-row' style={{gap: "1rem"}}>
+                    <div className='flex--row'>
                         <h1><FaLinkedinIn /></h1>
                         <h1><FaTwitter /></h1>
                         <h1><FaFacebook /></h1>
