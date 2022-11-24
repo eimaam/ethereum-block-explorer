@@ -7,8 +7,6 @@
 #### Dashboard - View and Manage all Balances and Transaction History of the linked Wallet/Address
 
 
-
-
 ## Installation Procedure:
 - Clone or download this repo using the `<CODE>` button just below the repo title
 - Unzip the Folder and Open with VS Code or your preferred Editor
