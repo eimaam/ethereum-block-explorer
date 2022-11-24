@@ -12,6 +12,10 @@ export const TransactionHistory = () => {
   }
 
   return (
+    <>
+    {/* condition to check if Address has a transaction or not and display different UI depending on the condition */}
+    {TransactionHistory.length > 0 
+    ? 
     <div className='my-4 shadow-2xl rounded-md p-2' id='assets'>
         {transHistory.slice(0, count).map((item, index) => {
           return <HistoryItem 
@@ -28,5 +32,12 @@ export const TransactionHistory = () => {
           <button className='bg-primary m-3' onClick={() => setCount(prev => prev + prev)}>SHOW MORE</button>
         </div>
     </div>
+    :
+    <div className='my-4 shadow-2xl rounded-md p-2 h-36 flex--col' id='assets'>
+      <h2 className='text-center'>No Transaction record for this address...</h2>
+      <i></i>
+    </div>
+    }
+    </>
   )
 }
