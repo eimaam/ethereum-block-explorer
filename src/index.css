@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components{
-    p{
+    body{
         @apply 
-        font-space
+        font-spaceGrotesk
     }
     .share--icon{
         @apply
@@ -15,7 +15,119 @@
         transform:rotate(180deg);
     }
 
-    .container{
+    .container--child{
+        margin: auto;
+        width: 55%;
+        padding: 1rem;
+
+        @apply
+        mt-16
+        sm:min-w-full 
+        md:w-80
+    }
+
+    .flex--row{
+        @apply
+        flex
+        flex-row
+        gap-2
+        justify-center
+        items-center
+    }
+
+    .flex--col{
+        @apply
+        flex
+        flex-col
+        gap-2
+        justify-center
+        items-center
+    }
+
+    button, input[type=submit]{
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        @apply
+        rounded-md
+        p-2
+        bg-secondary 
+        text-dark
+        cursor-pointer
+    }
+
+    button:hover{
+        @apply
+        bg-grey
+        border-secondary
+        border
+        text-default
         
+    }
+    input{
+        @apply
+        font-spaceGrotesk
+        w-full
+        rounded-md
+        bg-secondary
+        p-2
+        text-base
+        resize-none
+        font-light
+        caret-primary
+    }
+    input:hover{
+        outline: 1px solid grey;
+    }
+
+    /* defaults */
+    h1{
+        @apply
+        text-3xl
+        sm:text-2xl
+    }
+    
+    h2{
+        @apply
+        text-xl
+        text-primary
+        sm:text-base
+        
+    
+        /* @include mobile{
+            font-size: 1.05rem;
+        } */
+    }
+    
+    h3{
+        font-size: 1.15rem;
+        @apply
+        sm:text-base
+    
+        /* @include mobile{
+            font-size: 0.9rem;
+        } */
+    }
+    
+    h4{
+        font-size: 1.01rem;
+        font-weight: 500;
+        @apply
+        sm:font-normal
+        sm:text-base
+    }
+    
+    p{
+        font-size: 1rem;
+        font-weight: lighter;
+    
+        /* @include mobile{
+            font-size: 0.9rem;
+        } */
+    }
+
+    img{
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
     }
 }
