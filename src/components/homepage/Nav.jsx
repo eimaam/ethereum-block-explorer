@@ -7,7 +7,7 @@ export const Nav = () => {
       <ul className='w-60 flex--row m-auto justify-between sm:w-full'>
         <div className='flex--row'>
           <li className='text-lg sm:hidden'>Home</li>
-          <li className='text-lg sm:hidden'>About us</li>
+          <li className='text-lg sm:hidden'>About Us</li>
         </div>
         <div className='flex--row'>
           <li><button className='sm:text-xs'>Connect Wallet</button></li>

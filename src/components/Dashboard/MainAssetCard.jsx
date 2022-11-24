@@ -4,6 +4,7 @@ import { BiHide, BiShareAlt, BiShow } from "react-icons/bi"
 import { LoaderFullscreen } from "../LoaderFullscreen"
 import { useData } from '../../context/DataContext'
 import { toast } from 'react-toastify'
+import { ClipLoader } from 'react-spinners'
 
 export const MainAssetCard = () => {
   // importing searched address from DataContext
@@ -23,10 +24,7 @@ export const MainAssetCard = () => {
   const share = () => {
     // referencing the address location
     let address = document.querySelector(".address");
-  
     
-    // address.setSelectionRange(0, 99999); // For mobile devices
-  
     // defining the string format to copy
     navigator.clipboard.writeText(`ether-scan.vercel.app/${address.innerHTML}`);
     
@@ -38,7 +36,7 @@ export const MainAssetCard = () => {
   // displays loading animation if data is being fetched
   // to avoid page break
   if(etherData === undefined){
-    return <LoaderFullscreen />
+    return <div className='flex--col'><ClipLoader /></div>
   }
 
   // formatting the balance to main value in two decimal places using the contract decimals value
@@ -52,7 +50,7 @@ export const MainAssetCard = () => {
           </div>
           <div className='flex--col' style={{alignItems: "flex-start"}}>
             <h3>ETHEREUM</h3>
-            <h2 className='text-white w-200px sm:w-100px overflow-hidden text-ellipsis address'>{walletAddress}</h2>
+            <h2 className='text-white w-200px sm:w-100px overflow-hidden text-ellipsis address'>{walletAddress}</h2> 
             <h1 className='text-extras'>{!hideBalance ? `$ ${etherData.quote}` : "******"}</h1>
             <h2 className='text-white '>{!hideBalance ? `≈ ${etherBalance}` : "******"} <span>ETH</span></h2>
           </div>

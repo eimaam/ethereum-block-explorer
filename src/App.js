@@ -7,10 +7,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Home } from './components/homepage/Home';
 import { ErrorPage } from './components/ErrorPage';
+// AOS import
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   // const [loading, setLoading] = useState(true)
   // useEffect(() => {
+      // AOS.init({delay: 700, duration: 700, easing: 'ease-out'})
   //   setTimeout(() => {
   //     setLoading(false)
   //   }, 2500);

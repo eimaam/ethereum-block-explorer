@@ -1,12 +1,12 @@
 import React from 'react'
-import { DotLoader } from 'react-spinners'
+import { ClipLoader, DotLoader, FadeLoader, PropagateLoader, RotateLoader, SquareLoader, SyncLoader } from 'react-spinners'
 
 export const LoaderFullscreen = ({title}) => {
   return (
-    <div className='w-full h-70vh flex--col bg-primary opacity-90'>
-      <div className='flex-col'>
-        <DotLoader />
-        <h2>{title}</h2>
+    <div className='w-full h-100vh flex--col bg-secondary'>
+      <div className='flex--col'>
+        <SyncLoader />
+        <h3>{title}</h3>
       </div>
     </div>
   )

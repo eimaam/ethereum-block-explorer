@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiMoney } from 'react-icons/bi'
-import { FaInfo, FaUser } from 'react-icons/fa'
+import { FaUser } from 'react-icons/fa'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 
 export const HistoryItem = ({from, value, time, date}) => {
@@ -16,7 +16,7 @@ export const HistoryItem = ({from, value, time, date}) => {
                     <h2><RiMoneyDollarCircleFill /></h2>
                     <div>
                         <h4>$Value:</h4>
-                        <p>{value.toFixed(3)}</p>
+                        <p>{value && value.toFixed(3)}</p>
                     </div>
                 </div>
                 <div className='flex--row'>

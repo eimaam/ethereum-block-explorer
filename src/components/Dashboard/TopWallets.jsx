@@ -4,14 +4,9 @@ import { useData } from '../../context/DataContext'
 import { LoaderFullscreen } from '../LoaderFullscreen'
 
 export const TopWallets = () => {
-    const { walletBalance, loading } = useData()
+    const { walletBalance } = useData()
 
-    if(loading){
-        return <LoaderFullscreen />
-    }
-
-    console.log(walletBalance)
-
+console.log(walletBalance)
   return (
     <div className='bg-primary p-4 sm:px-1 rounded-lg my-4 flex--row flex-wrap'>
     {walletBalance.slice(0,10).map((item, index) => {
