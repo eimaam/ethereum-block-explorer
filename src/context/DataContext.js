@@ -11,7 +11,7 @@ export const useData = () => {
 export const DataProvider = ({ children }) => {
 
     // state to manage wallet address entry
-    const [walletAddress, setWalletAddress] = useState("0xA63a26eedF1a1018218b8a5E1EEea0DF8fC5c143")
+    const [walletAddress, setWalletAddress] = useState("0xb1afb973cd4df19e7aae73d8be0b438c079cdb16")
     
     //urls for API call - balance and transaction sheets 
     let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_API_KEY}` 

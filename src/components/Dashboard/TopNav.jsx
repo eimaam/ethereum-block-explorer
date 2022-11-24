@@ -54,7 +54,7 @@ export const TopNav = () => {
 
   return (
     <div className='fixed top-0 right-0 z-50 w-85 float-right bg-primary sm:w-full sm:float-none' id='topNav'>
-        <div className='sm:float-none sm:w-full md:w-full m-auto w-55 flex--row justify-between py-1 px-2 border-b border-b-gray-900'>
+        <div className='sm:float-none sm:w-full md:w-full m-auto w-55 flex--row justify-between py-2 px-2 border-b border-extras'>
             <div className='flex--row'>
                 <div id='navToggler'>
                     {!showNav && 
