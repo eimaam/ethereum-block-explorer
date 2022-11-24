@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { ClipLoader } from 'react-spinners'
 import { useData } from '../../../context/DataContext'
-import { LoaderFullscreen } from '../../LoaderFullscreen'
 import { HistoryItem } from './HistoryItem'
 
 export const TransactionHistory = () => {
@@ -13,9 +12,13 @@ export const TransactionHistory = () => {
     return <div className='flex--col'><ClipLoader /></div>
   }
 
+  console.log(transHistory.length)
+
   return (
     <>
     {/* condition to check if Address has a transaction or not and display different UI depending on the condition */}
+    {transHistory.length !== 0 
+    ? 
     <div className='my-4 shadow-2xl rounded-md p-2' id='assets'>
         {transHistory.slice(0, count).map((item, index) => {
           return <HistoryItem 
@@ -32,7 +35,11 @@ export const TransactionHistory = () => {
           <button className='bg-primary m-3' onClick={() => setCount(prev => prev + prev)}>SHOW MORE</button>
         </div>
     </div>
-    
+    :
+    <div className='my-4 shadow-2xl rounded-md p-2 h-36 flex--col' id='assets'>
+      <h2 className='text-center'>No Transaction record for this address...</h2>
+    </div>
+    }
     </>
   )
 }

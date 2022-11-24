@@ -10,18 +10,20 @@ import { ErrorPage } from './components/ErrorPage';
 // AOS import
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Explore } from './components/Explore';
 
 function App() {
-  // const [loading, setLoading] = useState(true)
-  // useEffect(() => {
-      // AOS.init({delay: 700, duration: 700, easing: 'ease-out'})
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 2500);
-  // }, [])
-  // if(loading){
-  //   return <LoaderFullscreen />
-  // }
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+      AOS.init({delay: 700, duration: 700, easing: 'ease-out'})
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500);
+  }, [])
+  
+  if(loading){
+    return <LoaderFullscreen />
+  }
 
   return (
     <>
@@ -30,6 +32,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
+        <Route path='explore' element={<Explore />} />
       </Routes>
       </DataProvider>
       {/* react toastify */}

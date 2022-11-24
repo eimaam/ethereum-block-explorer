@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCheck, FaFacebook, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import banner from "../../assets/ethereum-banner.svg"
 import tokens from "../../assets/ethereum-erc-20-tokens.png"

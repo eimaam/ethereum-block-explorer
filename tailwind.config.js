@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     screens: {
       'sm': {'max': '820px'},
-      'md': {'max': '820px', 'max': '1410px'},
-      'lg': "1410px",
+      'md': {'max': '820px', 'max': '1510px'},
+      'lg': "1510px",
     },
     extend: {
       fontSize: {

@@ -2,7 +2,7 @@ import React from 'react'
 import { MainAssetCard } from './MainAssetCard'
 import { TopNav } from './TopNav'
 import { SideNav } from './SideNav'
-import { TopWallets } from './TopWallets'
+import { Assets } from './tokensList/Assets'
 import { TransactionHistory } from './history/TransactionHistory'
 import { useData } from '../../context/DataContext'
 import { LoaderFullscreen } from '../LoaderFullscreen'
@@ -12,7 +12,7 @@ export const Dashboard = () => {
   const { loading } = useData()
 
   if(loading){
-    return <LoaderFullscreen title="Fetching Balance Sheet"/>
+    return <LoaderFullscreen title="Processing request..."/>
   }
 
   return (
@@ -21,7 +21,7 @@ export const Dashboard = () => {
           <TopNav />
           <SideNav />
           <MainAssetCard />
-          <TopWallets />
+          <Assets />
           <TransactionHistory />
         </div>
         <Footer />      

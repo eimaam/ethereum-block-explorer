@@ -11,7 +11,7 @@ export const useData = () => {
 export const DataProvider = ({ children }) => {
 
     // state to manage wallet address entry
-    const [walletAddress, setWalletAddress] = useState("0x690b9a9e9aa1c9db991c7721a92d351db4fac990")
+    const [walletAddress, setWalletAddress] = useState("0xA63a26eedF1a1018218b8a5E1EEea0DF8fC5c143")
     
     //urls for API call - balance and transaction sheets 
     let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_API_KEY}` 
@@ -38,6 +38,8 @@ export const DataProvider = ({ children }) => {
             .catch(err => {
               if(err.response.status === 400){
                 toast.error('Invalid Address')
+              }else if(err.code === "ERR_BAD_REQUEST"){
+                toast.error('Request failed... Try again')
               }else{
                 console.log(err)
               }

@@ -1,13 +1,11 @@
 import React from 'react'
 import { BiHome } from 'react-icons/bi'
-import { FaBars, FaSearchDollar } from 'react-icons/fa'
+import { FaSearchDollar } from 'react-icons/fa'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { IoMdImages } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-import { useData } from '../../context/DataContext'
 
 export const SideNav = () => {
-
     
   return (
     <div className='bg-primary fixed left-0 top-0 bottom-0 w-15 min-h-screen flex--col items-start px-4 sm:hidden' id='nav'>
@@ -18,7 +16,7 @@ export const SideNav = () => {
                 </Link>
             </li>
             <li className='text-xl py-4 hover:text-secondary md:text-lg'>
-                <Link to="/" className='justify-start gap-4 flex--row '>
+                <Link to="/dashboard" className='justify-start gap-4 flex--row '>
                     <RiMoneyDollarCircleFill className='text-gray-500'/> Assets
                 </Link>
             </li>
@@ -28,7 +26,7 @@ export const SideNav = () => {
                 </Link>
             </li>
             <li className='text-xl py-4 hover:text-secondary md:text-lg'>
-                <Link to="/" className='justify-start gap-4 flex--row '>
+                <Link to="/dashboard" className='justify-start gap-4 flex--row '>
                     <IoMdImages className='text-gray-500'/> NFTs
                 </Link>
             </li>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { BiMoney } from 'react-icons/bi'
 import { FaUser } from 'react-icons/fa'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 

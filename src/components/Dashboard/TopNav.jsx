@@ -8,11 +8,10 @@ import { GrClose } from 'react-icons/gr'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { IoMdImages } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 export const TopNav = () => {
     // importing walletAddress value and state updater to update as address is entered in search bar 
-    const { setWalletAddress, walletAddress, setLoading } = useData()
+    const { walletAddress, LookUpAddress } = useData()
 
     // manage mobile navigation menu display ==> hide/show
     const [showNav, setShowNav] = useState(false)
@@ -41,34 +40,17 @@ export const TopNav = () => {
             searchIcon.style.display = "block"
             walletConnect.style.display = "block"
             hamburger.style.display = "flex"
-            // logo.style.display = "block"
         }
     }
     
 
-    // user's entered address
+    // state to save supplied Address  
     const [enteredAddress, setEnteredAddress] = useState("")
-    
 
     const handleChange = (e) => {
         e.preventDefault()
-        // const {name, value} = e.target
         setEnteredAddress(e.target.value)
-        console.log(enteredAddress)
     }
-
-    const fetchData = () => { 
-        // return error message if address field is empty
-        if(enteredAddress === ""){
-            return toast.error('pls enter an Address')
-        }else if(enteredAddress.includes(" ")){
-            return toast.error('Address can not contain space(s)')
-        }
-        setLoading(true)
-        setWalletAddress(enteredAddress)
-    }
-
-    
 
   return (
     <div className='fixed top-0 right-0 z-50 w-85 float-right bg-primary sm:w-full sm:float-none' id='topNav'>
@@ -87,7 +69,7 @@ export const TopNav = () => {
                     }
                 </div>
                 <img src={ethLogo} alt="" className='w-8 h-auto sm:hidden'/>
-                <h3 className='sm:hidden' id='title'>ETH-SCAN</h3>
+                <h3 className='sm:hidden' id='title'>SCAN</h3>
             </div>
             <div className='flex--row' id='searchTools'>
                 <div className='flex--row'>
@@ -98,7 +80,7 @@ export const TopNav = () => {
                     name='walletAddress'
                     onChange={handleChange}
                     />
-                    <button className='sm:hidden' id='searchBtn' onClick={fetchData}>
+                    <button className='sm:hidden' id='searchBtn' onClick={() => LookUpAddress(enteredAddress)}>
                         Search
                     </button>
                     <button className='hidden' id='cancelBtn' onClick={show}>
@@ -123,17 +105,17 @@ export const TopNav = () => {
                 </Link>
             </li>
             <li className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                <Link to="/" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
+                <Link to="/dashboard" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
                     <RiMoneyDollarCircleFill /> Assets
                 </Link>
             </li>
             <li className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                <Link to="/" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
+                <Link to="/explore" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
                     <FaSearchDollar /> Explore
                 </Link>
             </li>
             <li className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                <Link to="/" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
+                <Link to="/dashboard" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
                     <IoMdImages /> NFTs
                 </Link>
             </li>
