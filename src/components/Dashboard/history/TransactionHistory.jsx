@@ -14,7 +14,7 @@ export const TransactionHistory = () => {
   return (
     <>
     {/* condition to check if Address has a transaction or not and display different UI depending on the condition */}
-    {TransactionHistory.length > 0 
+    {TransactionHistory.length === 0 
     ? 
     <div className='my-4 shadow-2xl rounded-md p-2' id='assets'>
         {transHistory.slice(0, count).map((item, index) => {
