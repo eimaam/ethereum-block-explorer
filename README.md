@@ -1,5 +1,5 @@
 ## ETHEREUM NETWORK Block Explorer
-### For Priori Capital Assessment
+### Get all details of your Ethereum Wallet - Assets & NFTs in one environment.
 
 ## Navigation:
 #### Landing Page - Short details on the App with Nav Bar to direct to Dashboard and Search/Explore Page
