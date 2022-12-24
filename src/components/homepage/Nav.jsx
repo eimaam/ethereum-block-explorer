@@ -10,8 +10,8 @@ export const Nav = () => {
           <li className='text-lg sm:hidden'>About Us</li>
         </div>
         <div className='flex--row'>
-          <li><button className='sm:text-xs'>Connect Wallet</button></li>
-          <li><button className='sm:text-xs'>Get Our Mobile App</button></li>
+          <li><button className='sm:text-xs btn-secondary'>Connect Wallet</button></li>
+          <li><button className='sm:text-xs btn-secondary'>Get Our Mobile App</button></li>
           <li><Link to="/dashboard"><button className='sm:text-xs'>Dashboard</button></Link></li>
         </div>
       </ul>
