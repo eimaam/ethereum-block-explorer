@@ -82,7 +82,7 @@ export const Login = () => {
     
   return (
     <div className='w-full h-screen flex--col text-center' id='login'>
-        <form className='border rounded-md flex--col w-80 lg:w-1/2 md:w-1/2 p-4'>
+        <form className='border rounded-md flex--col w-80 lg:w-1/3 md:w-1/2 p-4'>
             <h2>Hi there! 👋 Welcome!</h2>
             <h3>Enter your login details:</h3>
             <div className='w-full'>
@@ -108,7 +108,7 @@ export const Login = () => {
             {/* error message */}
             {/* <i className="error">{error}</i> */}
             <div>
-                <input className='btn-primary' type='submit' value="Log in"/>
+                <input className='btn-primary lg:px-10' type='submit' value="Log in"/>
             </div>
             <p>
                 or
