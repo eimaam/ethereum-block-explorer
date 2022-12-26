@@ -11,8 +11,12 @@ export const Nav = () => {
     <nav className='bg-primary p-2 border boder-b-grey '>
       <ul className='w-60 flex flex-row m-auto justify-between sm:w-full'>
         <div className='flex--row'>
-          <li className='text-base md:text-lg cursor-pointer'>Home</li>
-          <li className='text-base md:text-lg cursor-pointer sm:hidden'>About Us</li>
+          <li className='text-base md:text-lg cursor-pointer'>
+            <Link to="/">Home</Link>
+          </li>
+          <li className='text-base md:text-lg cursor-pointer sm:hidden'>
+            <Link to="/">About Us</Link>
+          </li>
         </div>
         <div className='flex--row'>
         <div className='flex--row'>
@@ -31,7 +35,7 @@ export const Nav = () => {
               </Link>
             </h4>
             <h4 className=' hover:text-primary'>
-              <Link to="/wallets" className='flex--row'>
+              <Link to="/settings" className='flex--row'>
                 <AiFillSetting /> 
                 Account Settings
               </Link>
