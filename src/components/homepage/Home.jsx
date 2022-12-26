@@ -11,11 +11,11 @@ export const Home = () => {
   return (
     <>
     <Nav />
-    <div className='w-full min-h-70vh flex--col bg-primary py-2'>
+    <div className='w-full sm:min-h-70vh md:h-70vh lg:h-70vh flex--col bg-primary py-2'>
         <div className='w-60 grid grid-cols-2 gap-6 md:w-80 sm:flex--col sm:flex-col-reverse'>
             <div className='flex--col items-start' data-aos="fade-left">
                 <h1 className='text-3xl font-bold sm:text-xl'>One environment to manage all your assets on the Ethereum Network</h1>
-                <h2 className='text-2xl text-default text-base'>Securely Review your transactions and Manage all your ERC20 Tokens from an easy-to navigate Dashboard</h2>
+                <h2 className='text-default text-base'>Securely Review your transactions and Manage all your ERC20 Tokens from an easy-to navigate Dashboard</h2>
                 <button className='py-4 px-6 bg-secondary text-md text-dark btn-secondary'>
                   <Link to="/dashboard">Get Started</Link></button>
             </div>
