@@ -23,7 +23,6 @@ export const Footer = () => {
             </div>
             <div className='flex--col gap-0 mt-6'>
                 <p>All rights reserved &copy; 2022</p>
-                <p><a className='text-blue-800' href="https://www.priori.capital/">Priori Capital</a> Assessment</p>
             </div>
         </div>
     </footer>
