@@ -19,7 +19,7 @@ export const Home = () => {
                 <button className='py-4 px-6 bg-secondary text-md text-dark btn-secondary'>
                   <Link to="/dashboard">Get Started</Link></button>
             </div>
-            <div className='w-600px md:w-full'>
+            <div className='w-full'>
                 <img src={banner} alt="" data-aos="fade-right"/>
             </div>
         </div>
