@@ -25,7 +25,7 @@ export const Home = () => {
         </div>
     </div>
     <div className='w-full my-14 flex--col' data-aos="fade-up">
-      <div className='w-70 grid grid-cols-2 gap-20  md:w-80 sm:flex sm:flex-col'>
+      <div className='w-70 grid grid-cols-2 gap-20 md:w-80 sm:flex sm:flex-col'>
         <div>
           <img src={tokens} alt="ethereum tokens" />
         </div>
