@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { MdLogout } from "react-icons/md"
 import { AiFillSetting } from "react-icons/ai"
 import { FaWallet } from "react-icons/fa"
-import avatar from "../../assets/IMG_0422 (2).HEIC"
+import avatar from "../../assets/avatar.png"
 
 export const Nav = () => {
   const [showSettingPanel, setShowSettingPanel] = useState(false)

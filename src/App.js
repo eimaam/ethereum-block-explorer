@@ -11,10 +11,10 @@ import { ErrorPage } from './components/ErrorPage';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Explore } from './components/Explore';
-import { Login } from './components/authPages/Login';
-import { SignUp } from './components/authPages/SignUp';
+import { Login } from './components/AuthPages/Login';
+import { SignUp } from './components/AuthPages/SignUp';
 import { Wallets } from './components/Wallets';
-import { AccountSettings } from './components/authPages/AccountSettings';
+import { AccountSettings } from './components/AuthPages/AccountSettings';
 
 function App() {
   const [loading, setLoading] = useState(true)
