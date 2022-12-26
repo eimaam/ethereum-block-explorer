@@ -11,6 +11,10 @@ import { ErrorPage } from './components/ErrorPage';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Explore } from './components/Explore';
+import { Login } from './components/authPages/Login';
+import { SignUp } from './components/authPages/SignUp';
+import { Wallets } from './components/Wallets';
+import { AccountSettings } from './components/authPages/AccountSettings';
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -20,7 +24,7 @@ function App() {
       // show loading animation for 2.5 secs
     setTimeout(() => {
       setLoading(false)
-    }, 2500);
+    }, 0);
   }, [])
 
 
@@ -37,6 +41,10 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='explore' element={<Explore />} />
+        <Route path='login' element={<Login />} />
+        <Route path='signup' element={<SignUp />} />
+        <Route path='wallets' element={<Wallets />} />
+        <Route path='settings' element={<AccountSettings />} />
       </Routes>
       </DataProvider>
       {/* react toastify */}
