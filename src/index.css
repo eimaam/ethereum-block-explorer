@@ -2,21 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer base{
     body{
         @apply 
         font-spaceGrotesk
         transition-all
         duration-300
     }
-    .share--icon{
-        @apply
-        rounded-full
-    }
-    .rotateXX{
-        transform:rotate(180deg);
-    }
 
+    /* defaults */
+    h1{
+        @apply
+        text-3xl
+        sm:text-2xl
+    }
+    
+    h2{
+        @apply
+        text-xl
+        text-primary
+        sm:text-base
+    }
+    
+    h3{
+        font-size: 1.15rem;
+        @apply
+        sm:text-base
+    }
+    
+    h4{
+        font-size: 1.01rem;
+        font-weight: 500;
+        @apply
+        sm:font-normal
+        sm:text-base
+    }
+    
+    p{
+        font-size: 1rem;
+        font-weight: lighter;
+    
+    }
+}
+
+@layer utilities{
     .container--child{
         @apply
         transition-all
@@ -47,25 +76,62 @@
         items-center
     }
 
-    button, input[type=submit]{
+}
+
+@layer components{
+    
+    .share--icon{
+        @apply
+        rounded-full
+    }
+
+    .rotateXX{
+        transform:rotate(180deg);
+    }
+
+    .btn-primary{
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        @apply
+        rounded-md
+        py-2
+        px-4
+        bg-primary 
+        text-dark
+        cursor-pointer
+    }
+
+    .btn-secondary{
         font-size: 0.8rem;
         text-transform: capitalize;
         @apply
         rounded-md
         p-2
-        bg-secondary 
+        px-4
+        bg-secondary
         text-dark
         cursor-pointer
     }
 
-    button:hover{
+    .btn-secondary:hover{
         @apply
         bg-grey
         border-secondary
         border
         text-default
-        
     }
+
+    .btn-small{
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        @apply
+        rounded-md
+        px-1
+        bg-primary
+        text-dark
+        cursor-pointer
+    }
+
     input{
         @apply
         font-spaceGrotesk
@@ -82,51 +148,7 @@
         outline: 1px solid grey;
     }
 
-    /* defaults */
-    h1{
-        @apply
-        text-3xl
-        sm:text-2xl
-    }
     
-    h2{
-        @apply
-        text-xl
-        text-primary
-        sm:text-base
-        
-    
-        /* @include mobile{
-            font-size: 1.05rem;
-        } */
-    }
-    
-    h3{
-        font-size: 1.15rem;
-        @apply
-        sm:text-base
-    
-        /* @include mobile{
-            font-size: 0.9rem;
-        } */
-    }
-    
-    h4{
-        font-size: 1.01rem;
-        font-weight: 500;
-        @apply
-        sm:font-normal
-        sm:text-base
-    }
-    
-    p{
-        font-size: 1rem;
-        font-weight: lighter;
-    
-        /* @include mobile{
-            font-size: 0.9rem;
-        } */
-    }
 
     img{
         max-width: 100%;
