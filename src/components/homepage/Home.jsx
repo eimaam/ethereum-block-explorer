@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <>
     <Nav />
-    <div className='w-full h-70vh flex--col bg-primary'>
+    <div className='w-full min-h-70vh flex--col bg-primary py-2'>
         <div className='w-60 grid grid-cols-2 gap-6 md:w-80 sm:flex--col sm:flex-col-reverse'>
             <div className='flex--col items-start' data-aos="fade-left">
                 <h1 className='text-3xl font-bold sm:text-xl'>One environment to manage all your assets on the Ethereum Network</h1>
