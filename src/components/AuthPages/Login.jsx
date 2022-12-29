@@ -6,17 +6,25 @@ import { Link } from 'react-router-dom'
 // import { auth } from '../firebaseConfig'
 // import { LoaderFullscreen } from './LoaderFullscreen'
 import { CgGoogle } from 'react-icons/cg'
+import { browserLocalPersistence, createUserWithEmailAndPassword, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'firebase/auth'
+import { useAuth } from '../../context/AuthContext'
+import { auth } from '../../firebaseConfig'
+import { toast } from 'react-toastify'
+import { LoaderFullscreen } from '../LoaderFullscreen'
+import { ResetPasswordModal } from './ResetPasswordModal'
 
 
 
 export const Login = () => {
-    // const { loading, setLoading, navigate, setIsLogged, error, setError, logInWithGoogle } = useAuth()
+    const { loading, setLoading, navigate, logInWithGoogle } = useAuth()
 
-    // useEffect(() => {
-    //     onAuthStateChanged(auth, data => {
-    //         data && navigate('/')
-    //     })
-    // }, [])
+    useEffect(() => {
+        onAuthStateChanged(auth, data => {
+            data && navigate('/')
+        })
+    }, [])
+
+    const [showModal, setShowModal] = useState(false)
 
     const [data, setData] = useState({
         email: "",
@@ -34,47 +42,41 @@ export const Login = () => {
     }
 
     // login function
-    // const login = async (e) => {
-    //     e.preventDefault()
-    //     setLoading(true)
-    //     try{
-    //         await setPersistence(auth, browserLocalPersistence)
-    //         await signInWithEmailAndPassword(auth, data.email, data.password)
-    //         .then(() => {
-    //             setIsLogged(true)
-    //             toast.success('Welcome...')
-    //             navigate('/')
-    //         })
-    //         setLoading(false)
-    //     }
-    //     catch(err){
-    //         if(err.code === 'auth/wrong-password'){
-    //             setLoading(false)
-    //             toast.error('Wrong Password')
-    //             setError('Wrong Password')
-    //         }else if(err.code === 'auth/too-many-requests'){
-    //             setLoading(false)
-    //             toast.error('Too many trials! You will have to reset your password to access this site!')
-    //             setError('Too many trials! You will have to reset your password to access this site!')
-    //         }else if(err.code === 'auth/user-not-found'){
-    //             setLoading(false)
-    //             toast.error('User not found!')
-    //             setError('User not found!')
-    //         }else if(err.code === 'auth/network-request-failed'){
-    //             setLoading(false)
-    //             setError('Sorry...! Something went wrong. Check your internet connection')
-    //         }else if(err.code === 'auth/invalid-email'){
-    //             setLoading(false)
-    //             toast.error('Email or Password incorrect')
-    //             setError('Email or Password incorrect')
-    //         }
-    //         else{
-    //         setLoading(false)
-    //         console.log(err.message)
-    //         toast.error('Retry...')
-    //         }
-    //     }
-    // }
+    const login = async (e) => {
+        e.preventDefault()
+        setLoading(true)
+        try{
+            await setPersistence(auth, browserLocalPersistence)
+            await signInWithEmailAndPassword(auth, data.email, data.password)
+            .then(() => {
+                toast.info('Welcome...')
+                navigate("/dashboard")
+            })
+            setLoading(false)
+        }catch (err) {
+            if(err.code === 'auth/wrong-password'){
+                setLoading(false)
+                toast.error('Wrong Password')
+            }else if(err.code === 'auth/too-many-requests'){
+                setLoading(false)
+                toast.error('Too many trials! You will have to reset your password to access this site!')
+            }else if(err.code === 'auth/user-not-found'){
+                setLoading(false)
+                toast.error('User not found!')
+            }else if(err.code === 'auth/network-request-failed'){
+                setLoading(false)
+            }else if(err.code === 'auth/invalid-email'){
+                setLoading(false)
+                toast.error('Email or Password incorrect')
+            }else{
+                setLoading(false)
+                console.log(err.message)
+                toast.error('Retry...')
+            }
+        }
+    }
+
+
 
     // if(loading){
     //     return <LoaderFullscreen />
@@ -82,7 +84,7 @@ export const Login = () => {
     
   return (
     <div className='w-full h-screen flex--col text-center' id='login'>
-        <form className='border rounded-md flex--col w-80 lg:w-1/3 md:w-1/2 p-4'>
+        <form onSubmit={login} className='border rounded-md flex--col w-90 lg:w-1/3 md:w-1/2 p-4'>
             <h2>Hi there! 👋 Welcome!</h2>
             <h3>Enter your login details:</h3>
             <div className='w-full'>
@@ -114,12 +116,17 @@ export const Login = () => {
                 or
             </p>
             <div>
-                <button className='btn-primary flex--row' style={{margin: "auto"}}>
+                <button type='button' className='btn-primary flex--row' style={{margin: "auto"}} onClick={logInWithGoogle}>
                     <CgGoogle /> Login with Google 
                 </button>
             </div>
             <div>
-                <p>Forgot Password? <button className="btn-small"><Link to="/reset">RESET</Link></button></p>
+                <p>
+                    Forgot Password? 
+                    <button type='button' className="btn-small" onClick={() => setShowModal(true)}>
+                        RESET
+                    </button>
+                </p>
                 <p>or</p>
                 <p>Don't have an account yet? 
                     <button className='btn-small'>
@@ -127,6 +134,10 @@ export const Login = () => {
                     </button>
                 </p>
             </div>
+            {showModal 
+            &&
+            <ResetPasswordModal handleClick={() => setShowModal(false)}/> 
+            }
         </form>
     </div>
   )
