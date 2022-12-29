@@ -1,5 +1,4 @@
 ## ETHEREUM NETWORK Block Explorer
-### For Priori Capital Assessment
 
 ## Navigation:
 #### Landing Page - Short details on the App with Nav Bar to direct to Dashboard and Search/Explore Page
