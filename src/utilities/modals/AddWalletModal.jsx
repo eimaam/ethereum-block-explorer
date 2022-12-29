@@ -14,6 +14,11 @@ export const AddWalletModal = () => {
             name='walletAddress'
             placeholder='enter address'
             />
+            <input 
+            type="text" 
+            name='walletName'
+            placeholder='give your wallet a Name. e.g TrustWallet1'
+            />
             <button type='submit' className='btn-secondary' >Add</button>
         </form>
         :
