@@ -1,11 +1,8 @@
-// import { sendPasswordResetEmail } from 'firebase/auth'
 import { sendPasswordResetEmail } from 'firebase/auth'
 import React, { useState } from 'react'
 import ReactDOM  from 'react-dom'
 import { toast } from 'react-toastify'
 import { auth } from '../../firebaseConfig'
-// import { useAuth } from '../Context/AuthContext'
-// import { auth } from '../firebaseConfig'
 
 export const ResetPasswordModal = ({ handleClick }) => {
   // getting error and setError already defined state from useAuth context
