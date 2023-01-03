@@ -16,10 +16,10 @@ import 'aos/dist/aos.css';
 import { Explore } from './components/Explore';
 import { Login } from './components/AuthPages/Login';
 import { SignUp } from './components/AuthPages/SignUp';
-import { Wallets } from './components/Wallets';
 import { AccountSettings } from './components/AuthPages/AccountSettings';
 import { AuthProvider } from './context/AuthContext';
 import { PrivateRoutes } from './Routes/PrivateRoutes';
+import { Wallets } from './components/wallet/Wallets';
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -29,7 +29,7 @@ function App() {
       // show loading animation for 2.5 secs
     setTimeout(() => {
       setLoading(false)
-    }, 0);
+    }, 2500);
   }, [])
 
 
