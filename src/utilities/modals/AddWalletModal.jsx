@@ -3,7 +3,6 @@ import { useState } from 'react'
 import ReactDOM  from 'react-dom'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 import { toast } from 'react-toastify'
-import { useAuth } from '../../context/AuthContext'
 import { database } from '../../firebaseConfig'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
