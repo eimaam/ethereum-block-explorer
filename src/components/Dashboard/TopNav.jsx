@@ -80,7 +80,7 @@ export const TopNav = () => {
                     name='walletAddress'
                     onChange={handleChange}
                     />
-                    <button className='sm:hidden' id='searchBtn' onClick={() => LookUpAddress(enteredAddress)}>
+                    <button className='sm:hidden btn-secondary ' id='searchBtn' onClick={() => LookUpAddress(enteredAddress)}>
                         Search
                     </button>
                     <button className='hidden' id='cancelBtn' onClick={show}>
@@ -90,11 +90,9 @@ export const TopNav = () => {
                         <FaSearch className='hidden sm:text-secondary sm:flex--row'/>
                     </h2>
                 </div>
-                <div id='walletConnect'>
-                    <button className='flex--row' style={{gap: "0.2rem"}}>
-                        <FaEthereum /> CONNECT WALLET 
-                    </button>
-                </div>
+                <h2 className='text-default'>
+                    <Link to="/wallets">Wallets</Link>
+                </h2>
             </div>
         </div>
         {showNav &&

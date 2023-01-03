@@ -7,8 +7,10 @@ import { TransactionHistory } from './history/TransactionHistory'
 import { useData } from '../../context/DataContext'
 import { LoaderFullscreen } from '../LoaderFullscreen'
 import { Footer } from '../homepage/Footer'
+import { useAuth } from '../../context/AuthContext'
 
 export const Dashboard = () => {
+  const { logOut } = useAuth()
   const { loading } = useData()
 
   if(loading){

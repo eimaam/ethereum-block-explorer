@@ -49,7 +49,7 @@ export const TransactionHistory = () => {
         <br />
         <div className='flex--row '>
           {/* add count+count when clicked in order to increase slice value and display more transactions */}
-          <button className='bg-primary m-3' onClick={() => setCount(prev => prev + prev)}>SHOW MORE</button>
+          <button className='bg-primary rounded-md px-2 py-1 hover:text-white m-3' onClick={() => setCount(prev => prev + prev)}>SHOW MORE</button>
         </div>
         </>
       }
