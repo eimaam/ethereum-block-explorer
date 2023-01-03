@@ -19,7 +19,7 @@ import { SignUp } from './components/AuthPages/SignUp';
 import { AccountSettings } from './components/AuthPages/AccountSettings';
 import { AuthProvider } from './context/AuthContext';
 import { PrivateRoutes } from './Routes/PrivateRoutes';
-import { Wallets } from './components/wallet/Wallets';
+import { Wallets } from './components/Wallets/Wallets';
 
 function App() {
   const [loading, setLoading] = useState(true)
