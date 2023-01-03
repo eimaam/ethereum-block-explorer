@@ -102,7 +102,6 @@ export const Wallets = () => {
     handleChange={handleChange}
     />
     }
-    <Footer />
     </>
   )
 }
