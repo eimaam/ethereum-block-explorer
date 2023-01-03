@@ -4,9 +4,14 @@ import { MdLogout } from "react-icons/md"
 import { AiFillSetting } from "react-icons/ai"
 import { FaWallet } from "react-icons/fa"
 import avatar from "../../assets/avatar.png"
+import { useAuth } from '../../context/AuthContext'
 
 export const Nav = () => {
+  const { logOut } = useAuth()
+
   const [showSettingPanel, setShowSettingPanel] = useState(false)
+
+  
   return (
     <nav className='bg-primary p-2 border boder-b-grey '>
       <ul className='w-60 flex flex-row m-auto justify-between sm:w-full'>
@@ -40,7 +45,7 @@ export const Nav = () => {
                 Account Settings
               </Link>
             </h4>
-            <h4 className='flex--row hover:text-primary'>
+            <h4 className='flex--row hover:text-primary' onClick={logOut}>
               <MdLogout /> 
               Log Out
             </h4>
