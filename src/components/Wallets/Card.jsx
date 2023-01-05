@@ -1,11 +1,12 @@
 import React from 'react'
 import ethLogo from "../../assets/EthereumLogo2.png"
 import { MdDeleteForever } from "react-icons/md"
+import { Link } from 'react-router-dom'
 
 
 export const Card = ({walletName, walletAddress, handleClick}) => {
   return (
-    <div className='m-auto flex flex-col justify-center gap-4 p-4'>
+    <Link to="" className='m-auto flex flex-col justify-center gap-4 p-4'>
       <div className='m-auto w-full bg-primary rounded-md p-4 flex flex-col gap-4'>
         <div className='flex items-center justify-between'>
             <h2 className='text-dark text-lg md:text-2xl'>
@@ -20,6 +21,6 @@ export const Card = ({walletName, walletAddress, handleClick}) => {
             </h2>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
