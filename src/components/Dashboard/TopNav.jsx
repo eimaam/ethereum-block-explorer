@@ -90,9 +90,11 @@ export const TopNav = () => {
                         <FaSearch className='hidden sm:text-secondary sm:flex--row'/>
                     </h2>
                 </div>
-                <h2 className='text-default'>
-                    <Link to="/wallets">Wallets</Link>
-                </h2>
+                <h3 className='text-default'>
+                    <Link to="/wallets">
+                        Wallets
+                    </Link>
+                </h3>
             </div>
         </div>
         {showNav &&

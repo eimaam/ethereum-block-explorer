@@ -22,7 +22,7 @@ export const TransactionHistory = () => {
     {/* condition to check if Address has a transaction or not and display different UI depending on the condition */}
     {transHistory.length !== 0 
     ? 
-    <div className='my-4 shadow-lg rounded-md px-4 py-2' id='assets' >
+    <div className='my-4 shadow-lg rounded-md px-2 py-2' id='assets' >
       <div className='flex--row items-center justify-around cursor-pointer gap-6'>
         <div className='flex--row justify-start cursor-pointer gap-6 mr-auto sm:gap-2'>
             <img src={chart} className="w-14 h-auto sm:w-8" />

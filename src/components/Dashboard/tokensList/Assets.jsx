@@ -8,9 +8,8 @@ export const Assets = () => {
     const [count, setCount] = useState(10)
     const [show, setShow] = useState(true)
 
-
   return (
-    <div className='w-full bg-primary my-4 px-4 py-2 rounded-lg  '>
+    <div className='w-full bg-primary my-4 p-2 rounded-lg  '>
       <div className='flex--row items-center justify-around cursor-pointer gap-6'>
           <div className='flex--row justify-start cursor-pointer gap-6 mr-auto sm:gap-2'>
             <img src={wallet} className="w-14 h-auto sm:w-8" />
