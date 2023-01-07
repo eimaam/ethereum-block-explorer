@@ -7,7 +7,7 @@ import avatar from "../../assets/avatar.png"
 import { useAuth } from '../../context/AuthContext'
 
 export const Nav = () => {
-  const { logOut } = useAuth()
+  const { logOut, user } = useAuth()
 
   const [showSettingPanel, setShowSettingPanel] = useState(false)
 
@@ -25,10 +25,25 @@ export const Nav = () => {
         </div>
         <div className='flex--row'>
         <div className='flex--row'>
-          <li><button className='sm:text-xs btn-secondary '>Connect Wallet</button></li>
+          <li>
+            <button className='sm:text-xs btn-secondary '>Connect Wallet</button>
+          </li>
           {/* <li><button className='sm:text-xs btn-secondary'>Get Our Mobile App</button></li> */}
-          <li><Link to="/dashboard"><button className='btn-secondary sm:text-xs'>Dashboard</button></Link></li>
+          {user ? 
+          <li>
+            <Link to="/dashboard">
+              <button className='btn-secondary sm:text-xs'>Dashboard</button>
+            </Link>
+          </li>
+          :
+          <li>
+            <Link to="/explore">
+              <button className='btn-secondary sm:text-xs'>Explore</button>
+            </Link>
+          </li>
+          }
         </div>
+        {user && 
         <div className='flex--col' onClick={() => setShowSettingPanel(prev => !prev)}>
           <img src={avatar} alt="" className='w-8 h-8 md:w-10 md:h-10 rounded-[100%]'/>
         {showSettingPanel &&
@@ -52,6 +67,7 @@ export const Nav = () => {
           </div>
         }
         </div>
+        }
         </div>
       </ul>
     </nav>
