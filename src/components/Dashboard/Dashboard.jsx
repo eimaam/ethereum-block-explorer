@@ -19,7 +19,7 @@ export const Dashboard = () => {
 
   return (
     <div className='w-85 float-right sm:w-full sm:float-none'>
-        <div className='container--child'>
+        <div className='container--child min-h-screen'>
           <TopNav />
           <SideNav />
           <MainAssetCard />
