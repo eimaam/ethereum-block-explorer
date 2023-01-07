@@ -68,8 +68,8 @@ export const TopNav = () => {
                     </h2>
                     }
                 </div>
-                <img src={ethLogo} alt="" className='w-8 h-auto sm:hidden'/>
-                <h3 className='sm:hidden' id='title'>SCAN</h3>
+                {/* <img src={ethLogo} alt="" className='w-8 h-auto sm:hidden'/> */}
+                <h3 className='sm:hidden' id='title'>ETHER-MANAGER</h3>
             </div>
             <div className='flex--row' id='searchTools'>
                 <div className='flex--row'>
@@ -110,13 +110,13 @@ export const TopNav = () => {
                 </Link>
             </li>
             <li className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                <Link to="/explore" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                    <FaSearchDollar /> Explore
+                <Link to="/dashboard" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
+                    <IoMdImages /> NFTs
                 </Link>
             </li>
             <li className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                <Link to="/dashboard" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
-                    <IoMdImages /> NFTs
+                <Link to="/explore" className='text-lg flex--row p-4 gap-3' onClick={() => setShowNav(false)}>
+                    <FaSearchDollar /> Explore
                 </Link>
             </li>
         </ul>

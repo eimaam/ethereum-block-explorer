@@ -21,13 +21,13 @@ export const SideNav = () => {
                 </Link>
             </li>
             <li className='text-xl py-4 hover:text-secondary md:text-lg'>
-                <Link to="/explore" className='justify-start  flex--row gap-4'>
-                    <FaSearchDollar className='text-gray-500'/> Explore
+                <Link to="/dashboard" className='justify-start gap-4 flex--row '>
+                    <IoMdImages className='text-gray-500'/> NFTs
                 </Link>
             </li>
             <li className='text-xl py-4 hover:text-secondary md:text-lg'>
-                <Link to="/dashboard" className='justify-start gap-4 flex--row '>
-                    <IoMdImages className='text-gray-500'/> NFTs
+                <Link to="/explore" className='justify-start  flex--row gap-4'>
+                    <FaSearchDollar className='text-gray-500'/> Explore
                 </Link>
             </li>
         </ul>
