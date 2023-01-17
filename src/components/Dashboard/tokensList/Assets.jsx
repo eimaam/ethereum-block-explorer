@@ -32,7 +32,7 @@ export const Assets = () => {
               })}
       </div>
       <div className='flex--col'>
-        {walletBalance.length > 10 && <button className='m-4' onClick={() => setCount(-1)}>Show All</button>}
+        {walletBalance.length > 10 && <button className='m-4 btn-secondary' onClick={() => setCount(walletBalance.length)}>Show All</button>}
       </div>
       </>
       }
