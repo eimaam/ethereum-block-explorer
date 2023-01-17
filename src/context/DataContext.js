@@ -11,7 +11,7 @@ export const useData = () => {
 export const DataProvider = ({ children }) => {
 
     // state to manage wallet address entry
-    const [walletAddress, setWalletAddress] = useState("0xb1afb973cd4df19e7aae73d8be0b438c079cdb16")
+    const [walletAddress, setWalletAddress] = useState("")
     
     //urls for API call - balance and transaction sheets 
     let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_COVALENT_API_KEY}` 
@@ -26,40 +26,41 @@ export const DataProvider = ({ children }) => {
     let etherData = walletBalance.find(item => item.contract_name === "Ether") 
     
     // runs everytime address is changed 
-    useEffect(() => {
-        const fetchBalance = () => {
-          if(walletAddress.length < 10){
-            return toast.error('Address not complete!')
+    const fetchBalance = () => {
+      if(walletAddress.length < 10){
+        return toast.error('Address not complete!')
+      }
+        axios.get(balanceUrl)
+        .then((res) => {
+          setWalletBalance(res.data.data.items)
+        })
+        .catch(err => {
+          if(err.response.status === 400){
+            toast.error('Invalid Address')
+          }else if(err.code === "ERR_BAD_REQUEST"){
+            toast.error('Request failed... Try again')
+          }else{
+            console.log(err)
           }
-            axios.get(balanceUrl)
-            .then((res) => {
-              setWalletBalance(res.data.data.items)
-            })
-            .catch(err => {
-              if(err.response.status === 400){
-                toast.error('Invalid Address')
-              }else if(err.code === "ERR_BAD_REQUEST"){
-                toast.error('Request failed... Try again')
-              }else{
-                console.log(err)
-              }
-            })
-          }
+        })
+      }
 
-        const fetchHistory = () => {
+    useEffect(() => {
+        const fetchHistory = (fetchBalance) => {
             axios.get(transactionsUrl)
             .then((res) => {
               setTransHistory(res.data.data.items)
+              fetchBalance()
+              setLoading(false)
             })
             .catch(err => console.log(err))
           }
           
-          fetchHistory()
-          fetchBalance()
+          fetchHistory(fetchBalance)
 
-          setTimeout(() => {
-            setLoading(false)
-          }, 2500);
+          // setTimeout(() => {
+          //   setLoading(false)
+          // }, 2500);
 
     }, [walletAddress])
 
