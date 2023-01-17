@@ -7,9 +7,9 @@ import { ClipLoader } from 'react-spinners'
 
 export const MainAssetCard = () => {
   // importing searched address from DataContext
-  const { walletAddress } = useData()
+  const { walletAddress, etherData } = useData()
   // import ethereum data from DataContext
-  const { etherData } = useData()
+  // const { etherData } = useData()
 
   // state to manage balance state ==> show/hide
   const [hideBalance, setHideBalance] = useState(false)
@@ -18,17 +18,6 @@ export const MainAssetCard = () => {
   const toggleBalance = () => {
     setHideBalance(prev => !prev)
   }
-
-  //function to copy unique share URL
-  const share = () => {
-    // referencing the address location
-    let address = document.querySelector(".address");
-    
-    // defining the string format to copy
-    navigator.clipboard.writeText(`priori.capital/${address.innerHTML}`);
-    toast.success("Link Copied!");
-  }
-
 
   // error handler
   // displays loading animation if data is being fetched
