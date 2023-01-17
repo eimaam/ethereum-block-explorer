@@ -80,10 +80,10 @@ export const TopNav = () => {
                     name='walletAddress'
                     onChange={handleChange}
                     />
-                    <button className='sm:hidden btn-secondary ' id='searchBtn' onClick={() => LookUpAddress(enteredAddress)}>
+                    <button className='sm:hidden btn-secondary' id='searchBtn' onClick={() => LookUpAddress(enteredAddress)}>
                         Search
                     </button>
-                    <button className='hidden' id='cancelBtn' onClick={show}>
+                    <button className='hidden sm:btn-small ' id='cancelBtn' onClick={show}>
                         Cancel
                     </button>
                     <h2 id='searchIcon' onClick={show}>
