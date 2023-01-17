@@ -55,7 +55,7 @@ export const TransactionHistory = () => {
       }
     </div>
     :
-    <div className='my-4 shadow-2xl rounded-md p-2 h-36 flex--col' id='assets'>
+    <div className='my-4 shadow-2xl rounded-md p-2 h-36 md:h-60 lg:h-60 flex--col' id='assets'>
       <h2 className='text-center'>No Transaction record for this address...</h2>
     </div>
     }
