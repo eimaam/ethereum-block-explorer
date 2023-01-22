@@ -2,8 +2,7 @@ import React from 'react'
 import { Nav } from '../homepage/Nav'
 import { useState } from 'react'
 import { AddWalletModal } from '../../utilities/modals/AddWalletModal'
-import { useEffect } from 'react'
-import { collection, deleteDoc, doc, onSnapshot, query, where } from 'firebase/firestore'
+import { deleteDoc, doc } from 'firebase/firestore'
 import { database } from '../../firebaseConfig'
 import { Card } from './Card'
 import { toast } from 'react-toastify'
@@ -11,11 +10,10 @@ import { useData } from '../../context/DataContext'
 import { useAuth } from '../../context/AuthContext'
 
 export const Wallets = () => {
-  const { walletAddress, setWalletAddress } = useData()
   const { navigate } = useAuth()
+  const { walletAddress, setWalletAddress, walletList } = useData()
 
 
-  const [walletList, setWalletList] = useState([])
   const [showModal, setShowModal] = useState(false)
 
 
@@ -36,26 +34,6 @@ export const Wallets = () => {
       [name]: value
     }))
   }
-  
-  useEffect(() => {
-    const fetchWalletList = async () => {
-      try {
-        const q = query(collection(database, 'wallets'), where('walletOwner', "==", "imamddahir@gmail.com"))
-        await onSnapshot(q, snapShot => {
-          setWalletList(snapShot.docs.map(data => ({
-            ...data.data(),
-            id: data.id
-          })))
-        })
-      } 
-      catch (error) {
-        console.log(error.message)
-      }
-    }
-        
-   fetchWalletList()
-
-  }, [])
 
 
   const deleteWallet = async (id, walletName) => {
