@@ -31,7 +31,10 @@ export const SelectWallet = ({ handleModal }) => {
               <AiFillCloseCircle />
           </h1>
           {walletList.length === 0 
-          ? <div>
+          ? <div className='text-center'>
+              <p><i>No registered Wallet...</i></p>
+              <p><i>Add one to display Dashboard</i></p>
+              <br />
               <button className='btn-secondary'>
                 <Link to="/wallets"> Add Wallet </Link>
               </button>
