@@ -1,5 +1,5 @@
-import { browserLocalPersistence, GoogleAuthProvider, onAuthStateChanged, setPersistence, signInWithPopup, signOut } from 'firebase/auth'
-import { collection, doc, getDoc, getDocs, setDoc } from 'firebase/firestore'
+import { browserLocalPersistence, onAuthStateChanged, setPersistence, signInWithPopup, signOut } from 'firebase/auth'
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { createContext } from 'react'
@@ -37,8 +37,8 @@ export const AuthProvider = ({ children }) => {
                                 email: data.email,
                             })
                         }
-                        setLoading(false)
                         setUser(data)
+                        setLoading(false)
                     }
                     catch(err){
                         console.log(err.message)
