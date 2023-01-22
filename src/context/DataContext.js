@@ -1,6 +1,9 @@
 import axios from 'axios'
+import { collection, onSnapshot, query, where } from 'firebase/firestore'
 import React, { useContext, createContext, useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
+import { database } from '../firebaseConfig'
+import { useAuth } from './AuthContext'
 
 const DataContext = createContext()
 
@@ -10,8 +13,13 @@ export const useData = () => {
 
 export const DataProvider = ({ children }) => {
 
+    const { user } = useAuth()
+  
     // state to manage wallet address entry
     const [walletAddress, setWalletAddress] = useState("")
+
+    // wallet list state - fetched from firestore
+    const [walletList, setWalletList] = useState([])
     
     //urls for API call - balance and transaction sheets 
     let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_COVALENT_API_KEY}` 
@@ -27,6 +35,7 @@ export const DataProvider = ({ children }) => {
     
     // runs everytime address is changed 
     const fetchBalance = () => {
+      setLoading(true)
       if(walletAddress.length < 10){
         return toast.error('Address not complete!')
       }
@@ -45,8 +54,36 @@ export const DataProvider = ({ children }) => {
         })
       }
 
+      // fetch added wallets from db
+      useEffect(() => {
+        const fetchWalletList = async () => {
+          setLoading(true)
+          try {
+            const q = query(collection(database, 'wallets'), where('walletOwner', "==", "imamddahir@gmail.com"))
+            await onSnapshot(q, snapShot => {
+              localStorage.setItem("walletList", JSON.stringify(snapShot.docs.map(data => ({
+                ...data.data(),
+                id: data.id
+              }))))
+            })
+            const list = JSON.parse(localStorage.getItem("walletList"))
+            setWalletList(list)
+            setLoading(false)
+          } 
+          catch (error) {
+            console.log(error.message)
+          }
+        }
+
+        fetchWalletList()
+
+      }, [user])
+
+      console.log(walletList)
+
     useEffect(() => {
         const fetchHistory = (fetchBalance) => {
+          setLoading(true)
             axios.get(transactionsUrl)
             .then((res) => {
               setTransHistory(res.data.data.items)
@@ -57,10 +94,6 @@ export const DataProvider = ({ children }) => {
           }
           
           fetchHistory(fetchBalance)
-
-          // setTimeout(() => {
-          //   setLoading(false)
-          // }, 2500);
 
     }, [walletAddress])
 
@@ -87,7 +120,8 @@ export const DataProvider = ({ children }) => {
     transHistory,
     walletAddress, 
     setWalletAddress,
-    LookUpAddress
+    LookUpAddress,
+    walletList,
   }
 
   return (
