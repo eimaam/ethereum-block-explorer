@@ -59,7 +59,7 @@ export const DataProvider = ({ children }) => {
         const fetchWalletList = async () => {
           setLoading(true)
           try {
-            const q = query(collection(database, 'wallets'), where('walletOwner', "==", "imamddahir@gmail.com"))
+            const q = query(collection(database, 'wallets'), where('walletOwner', "==", user.email))
             await onSnapshot(q, snapShot => {
               localStorage.setItem("walletList", JSON.stringify(snapShot.docs.map(data => ({
                 ...data.data(),
