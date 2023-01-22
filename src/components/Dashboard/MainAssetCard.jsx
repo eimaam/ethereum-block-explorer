@@ -8,7 +8,7 @@ import { LoaderFullscreen } from '../LoaderFullscreen'
 
 export const MainAssetCard = () => {
   // importing searched address from DataContext
-  const { walletAddress, etherData } = useData()
+  const { walletAddress, etherData, walletName } = useData()
   // import ethereum data from DataContext
   // const { etherData } = useData()
 
@@ -33,7 +33,7 @@ export const MainAssetCard = () => {
   return (
     <div className='sm:px-2 sm:justify-between bg-primary p-4 rounded-lg flex flex-col justify-around' data-aos="fade-down">
         <div>
-          <h3>TrustWallet 1:</h3>
+          <h3>{walletName ? walletName :  ""}</h3>
         </div>
         <div className='sm:justify-between flex justify-around'>
           <div className='flex--row'>
