@@ -58,10 +58,9 @@ export const AuthProvider = ({ children }) => {
                 setUser({
                     email: res.email,
                 })
-                navigate('/dashboard')
+                navigate('/')
                 setLoading(false)
             })
-            console.log(user)
         }
         catch(error){
             console.log(error.message)
