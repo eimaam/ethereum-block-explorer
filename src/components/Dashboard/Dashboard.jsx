@@ -9,21 +9,23 @@ import { LoaderFullscreen } from '../LoaderFullscreen'
 import { Footer } from '../homepage/Footer'
 import { useAuth } from '../../context/AuthContext'
 import { Navigate } from 'react-router-dom'
+import { useState } from 'react'
+import { SelectWallet } from '../../utilities/modals/SelectWallet'
+import { useEffect } from 'react'
 
 export const Dashboard = () => {
   const { navigate } = useAuth()
-  const { loading, walletAddress } = useData()
+  const { loading, setLoading, walletAddress, setWalletAddress } = useData()
 
-  if(walletAddress === ""){
-    return navigate('wallets')
-  }
-  // if(walletAddress === ""){
-  //   return <LoaderFullscreen 
-  //           title="Processing request..."
-  //           />
-  // }
+  const [showModal, setShowModal] = useState(true)
+
+  useEffect(() => {
+    walletAddress != "" && setShowModal(false)
+  }, [])
+
 
   return (
+    <>
     <div className='w-85 float-right sm:w-full sm:float-none'>
         <div className='container--child min-h-screen'>
           <TopNav />
@@ -34,5 +36,12 @@ export const Dashboard = () => {
         </div>
         <Footer />      
     </div>
+    {showModal 
+      && 
+    <SelectWallet
+    handleModal={() => setShowModal(prev => !prev)} 
+    /> 
+    }
+    </>
   )
 }
