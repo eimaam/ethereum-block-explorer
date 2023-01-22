@@ -27,7 +27,14 @@ function App() {
       AOS.init({delay: 600, duration: 700, easing: 'ease-out'})
 
       // show loading animation for 2.5 secs
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000);
   }, [])
+
+  if(loading){
+    return <LoaderFullscreen />
+  }
 
 
   return (
@@ -35,17 +42,16 @@ function App() {
     <AuthProvider>
       <DataProvider>
       <Routes>
-        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='explore' element={<Explore />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp />} />
-        <Route path='wallets' element={<Wallets />} />
-        <Route path='settings' element={<AccountSettings />} />
 
         <Route element={<PrivateRoutes />}>
-          
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='wallets' element={<Wallets />} />
+          <Route path='settings' element={<AccountSettings />} />
         </Route>
 
       </Routes>
