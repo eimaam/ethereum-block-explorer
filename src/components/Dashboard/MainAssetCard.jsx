@@ -4,6 +4,7 @@ import { BiHide, BiShareAlt, BiShow } from "react-icons/bi"
 import { useData } from '../../context/DataContext'
 import { toast } from 'react-toastify'
 import { ClipLoader } from 'react-spinners'
+import { LoaderFullscreen } from '../LoaderFullscreen'
 
 export const MainAssetCard = () => {
   // importing searched address from DataContext
@@ -23,7 +24,7 @@ export const MainAssetCard = () => {
   // displays loading animation if data is being fetched
   // to avoid page break
   if(etherData === undefined){
-    return <h2 className='flex--col'><ClipLoader /></h2>
+    return <LoaderFullscreen />
   }
 
   // formatting the balance to main value in two decimal places using the contract decimals value
