@@ -13,13 +13,14 @@ import { ErrorPage } from './components/ErrorPage';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // AOS import end
-import { Explore } from './components/Explore';
+import { Explore } from './components/Explore/Explore';
 import { Login } from './components/AuthPages/Login';
 import { SignUp } from './components/AuthPages/SignUp';
 import { AccountSettings } from './components/AuthPages/AccountSettings';
 import { AuthProvider } from './context/AuthContext';
 import { PrivateRoutes } from './Routes/PrivateRoutes';
 import { Wallets } from './components/Wallets/Wallets';
+import { ExploreResult } from './components/Explore/ExploreResult';
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -45,6 +46,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='explore' element={<Explore />} />
+        <Route path='explore/:exploreAddress' element={<ExploreResult />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp />} />
 
