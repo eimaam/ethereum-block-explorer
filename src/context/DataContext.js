@@ -20,6 +20,9 @@ export const DataProvider = ({ children }) => {
 
     // wallet list state - fetched from firestore
     const [walletList, setWalletList] = useState([])
+
+    // save each wallet name  wallet list
+    const [walletName, setWalletName] = useState("")
     
     //urls for API call - balance and transaction sheets 
     let balanceUrl = `https://api.covalenthq.com/v1/1/address/${walletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${process.env.REACT_APP_COVALENT_API_KEY}` 
@@ -121,6 +124,8 @@ export const DataProvider = ({ children }) => {
     setWalletAddress,
     LookUpAddress,
     walletList,
+    walletName,
+    setWalletName,
   }
 
   return (
