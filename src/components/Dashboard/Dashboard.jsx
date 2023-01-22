@@ -24,6 +24,11 @@ export const Dashboard = () => {
   }, [])
 
 
+  if(loading){
+    return <LoaderFullscreen title={'Processing...'}/>
+  }
+
+
   return (
     <>
     <div className='w-85 float-right sm:w-full sm:float-none'>
