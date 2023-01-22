@@ -25,8 +25,8 @@ export const Explore = () => {
     <SideNav />
     <div className='w-85 float-right h-screen sm:w-screen'>
         <div className='container--child flex--col h-screen'>
-            <input className=' placeholder:italic p-4 shadow border border-primary' type="text" placeholder='enter valid eth address' onChange={handleChange}/>
-            <button className='bg-primary py-4 px-8 text-bold text-lg sm:py-2 px-4' onClick={() => LookUpAddress(address)}><Link to={`/explore/${exploreAddress}`}> Search</Link></button>
+            <input className=' placeholder:italic p-3 shadow border border-primary' type="text" placeholder='enter valid eth address' onChange={handleChange}/>
+            <button className='btn-primary' onClick={() => LookUpAddress(address)}><Link to={`/explore/${exploreAddress}`}> Search</Link></button>
         </div>
     </div>
     </>
