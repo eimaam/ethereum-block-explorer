@@ -79,7 +79,6 @@ export const DataProvider = ({ children }) => {
 
       }, [user])
 
-      console.log(walletList)
 
     useEffect(() => {
         const fetchHistory = (fetchBalance) => {
